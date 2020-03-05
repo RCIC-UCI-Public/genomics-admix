@@ -1,0 +1,22 @@
+--- plink-ng-2.00a2.3/2.0/build_dynamic/Makefile.orig	2020-03-04 16:15:06.935000000 -0800
++++ plink-ng-2.00a2.3/2.0/build_dynamic/Makefile	2020-03-04 17:16:50.388000000 -0800
+@@ -17,16 +17,15 @@
+ #     work)
+ #   Debug symbols: set DEBUG to -g
+ NO_AVX2 = 1
+-NO_SSE42 =
++NO_SSE42 = 1
+ CPU_CHECK = 1
+ NO_LAPACK =
+ PREFER_CBLAS_F77 =
+ ZSTD_O2 = 1
+ STATIC_ZLIB =
+ STATIC_ZSTD = 1
+-DYNAMIC_MKL =
+-MKLROOT = /home/ubuntu/intel/mkl
+-MKL_IOMP5_DIR = /home/ubuntu/intel/compilers_and_libraries_2017.2.174/linux/compiler/lib/intel64
++DYNAMIC_MKL = 1
++MKL_IOMP5_DIR = $(MKLROOT)/../compiler/lib/intel64
+ FORCE_32BIT =
+ DEBUG =
+ 

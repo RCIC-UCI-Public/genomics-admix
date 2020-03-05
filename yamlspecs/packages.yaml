@@ -1,0 +1,8 @@
+system:
+  - zlib-devel
+bootstrap:
+build:
+  - plink
+  - plink-module
+manifest:
+  - "{{ build }}"
