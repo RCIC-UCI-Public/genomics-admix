@@ -8,7 +8,6 @@
   modinstdir: "{{mod_defaults.path}}"
   module:
     setenv: ""
-#      - "{{mod_defaults.setenv}}"
     prereq:
       - "{{compiler}}/{{compiler_version}}"
       - mkl/{{versions.mkl}}
