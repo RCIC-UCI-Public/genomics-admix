@@ -1,0 +1,19 @@
+# Builds module for rMATS
+!include rMATS.yaml
+!include rcic-module.yaml
+---
+- package: rMATS Module
+  pkgname: "{{name}}_{{version}}-module"
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path:
+      - PATH {{root}}
+    alias: 
+      - rMATS "python {{root}}/rmats.py"
+    prereq: 
+      - python/{{versions.python}}
+  requires:
+    - "{{name}}_{{version}}"
+    - python_{{versions.python}}-module
+    - rcic-module-support

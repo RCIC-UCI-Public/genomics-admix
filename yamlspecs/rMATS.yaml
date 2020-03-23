@@ -1,0 +1,22 @@
+!include common.yaml
+---
+- package: rMATS 
+  name: rMATS 
+  version: "{{versions.rMATS}}"
+  src_dir: "{{name}}.{{version}}"
+  turboversion: turbo-Linux-UCS4
+  extension: tgz
+  vendor_source: https://sourceforge.net/projects/rnaseq-mats/files/MATS/{{name}}.{{version}}.{{extension}}
+  description: |
+    rMATS {{version}} is a computational tool to detect differential alternative
+    splicing events from RNA-Seq data. The statistical model of MATS calculates
+    the P-value and false discovery rate that the difference in the isoform ratio
+    of a gene between two conditions exceeds a given user-defined threshold. 
+    See http://rnaseq-mats.sourceforge.net/index.html
+  build:
+    modules: ""
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/;
+       cp -p -R {{name}}-{{turboversion}}/* $(ROOT){{root}}
+  requires: ""
