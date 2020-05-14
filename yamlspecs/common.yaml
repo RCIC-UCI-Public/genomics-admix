@@ -1,7 +1,6 @@
 !include rcic-package.yaml
 ---
-- extension: tar.gz
-  versions: !include versions.yaml
+- versions: !include versions.yaml
   compiler: gcc
   compiler_version: "{{versions.gcc}}"
   build:

@@ -28,8 +28,3 @@
        mkdir -p $(ROOT){{root}}/bin;
        (cd 2.0/build_dynamic; make; $(INSTALL) -m 755 plink2 pgen_compress $(ROOT){{root}}/bin);
        (cd 1.9; make CPPFLAGS="{{DOPTS}}" BLASFLAGS="{{BOPTS}}" ZLIB=-lz plink; $(INSTALL) -m 755 plink $(ROOT){{root}}/bin)
-#  requires:
-#    - "{{compiler}}_{{compiler_version}}"
-
-# patch file was generated with 
-# diff -Naur plink-ng-2.00a2.3/2.0/build_dynamic/Makefile.orig plink-ng-2.00a2.3/2.0/build_dynamic/Makefile > plink.patch

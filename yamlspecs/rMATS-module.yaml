@@ -13,7 +13,6 @@
       - rMATS "python {{root}}/rmats.py"
     prereq: 
       - python/{{versions.python}}
-  requires:
-    - "{{name}}_{{version}}"
-    - python_{{versions.python}}-module
-    - rcic-module-support
+    requires:
+      - *Requires
+      - python_{{versions.python}}-module

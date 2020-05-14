@@ -3,16 +3,14 @@
 !include rcic-module.yaml
 ---
 - package: plink Module
-  pkgname: "{{name}}_{{version}}-module"
   category: GENOMICS
-  modinstdir: "{{mod_defaults.path}}"
   module:
     setenv: ""
-    prereq:
-      - "{{compiler}}/{{compiler_version}}"
-      - mkl/{{versions.mkl}}
     prepend_path:
       - PATH {{root}}/bin
-  requires:
-    - "{{name}}_{{version}}"
-    - rcic-module-support
+    prereq:
+      - *ModuleCompiler_prereq
+      - mkl/{{versions.mkl}}
+    requires:
+      - *ModuleCompiler_requires
+      - mkl_{{versions.mkl}}-module

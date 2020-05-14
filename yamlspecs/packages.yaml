@@ -5,4 +5,4 @@ build:
   - plink
   - plink-module
 manifest:
-  - "{{ build }}"
+  - "{{build}}"
