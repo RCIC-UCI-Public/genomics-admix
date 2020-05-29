@@ -3,7 +3,7 @@
 !include rcic-module.yaml
 ---
 - package: rMATS Module
-  pkgname: "{{name}}_{{version}}-module"
+#  pkgname: "{{name}}_{{version}}-module"
   category: GENOMICS
   module:
     setenv: ""
