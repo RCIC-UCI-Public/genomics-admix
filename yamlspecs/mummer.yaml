@@ -1,0 +1,34 @@
+!include common.yaml
+---
+- package: mummer
+  name: mummer
+  version: "{{versions.mummer}}"
+  distversion: "{{version}}beta2"
+  vendor_source: https://github.com/mummer4/mummer/releases/download/v{{distversion}}/{{name}}-{{distversion}}.{{extension}}
+  description: |
+    MUMmer {{distversion}} is a versatil alignment tool for DNA and protein sequences. 
+    For instruction on how to use the software, consult the manual
+    https://github.com/mummer4/mummer/blob/master/MANUAL.md
+  src_dir: "{{name}}-{{distversion}}"
+  addfile: 
+    - filter-requires-{{name}}.sh
+  build:
+    configure: ./configure
+    modules:
+      - foundation
+      - "{{compiler}}/{{compiler_version}}"
+    pkgmake: make
+  extras: ACKNOWLEDGEMENTS COPYRIGHT LICENSE.md
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}};
+       make install DESTDIR=$(ROOT)
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - gnuplot
+  rpm: !include rpm.extras.filter.yaml
+
+# for viz tools of mummer
+#fig2dev (3.2.3)
+#gnuplot (4.0)
+#xfig (3.2)

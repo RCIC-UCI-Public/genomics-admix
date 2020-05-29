@@ -1,0 +1,15 @@
+# Builds the module for flye.
+!include flye.yaml
+!include rcic-module.yaml
+---
+- package: flye module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path: ""
+    prereq: 
+      - *ModuleCompiler_prereq
+      - python/{{versions.python3}}
+    requires:
+      - *ModuleCompiler_requires
+      - python_{{versions.python3}}-module

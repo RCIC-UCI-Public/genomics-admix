@@ -1,0 +1,11 @@
+# Builds module for mummer
+!include mummer.yaml
+!include rcic-module.yaml
+---
+- package: mummer module
+  category: GENOMICS
+  module:
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *ModuleCompiler_requires

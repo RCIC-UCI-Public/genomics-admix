@@ -2,6 +2,13 @@
 gcc: "8.4.0" 
 mkl: "2019.5.281"
 python: "2.7.17"
+python3: "3.8.0"
 python_major: "2.7"
+java:
+  version: "1.8.0"
+  name: java8 
 plink: "2.00a2.3"
 rMATS: "4.0.2"
+canu: "2.0"
+flye: "2.7.1"
+mummer: "4.0.0"

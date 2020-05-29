@@ -1,8 +1,17 @@
 system:
   - zlib-devel
+  - perl-Time-Piece
 bootstrap:
 build:
   - plink
   - plink-module
+  - rMATS
+  - rMATS-module
+  - canu
+  - canu-module
+  - flye
+  - flye-module
+  - mummer
+  - mummer-module
 manifest:
   - "{{build}}"

@@ -1,0 +1,30 @@
+!include common.yaml
+---
+- package: flye 
+  name: flye 
+  version: "{{versions.flye}}"
+  vendor_source: https://github.com/fenderglass/Flye/archive/{{version}}.{{extension}}
+  description: |
+    Flye {{version}} is a de novo assembler for single molecule sequencing reads,
+    such as those produced by PacBio and Oxford Nanopore Technologies. It is
+    designed for a wide range of datasets, from small bacterial projects to 
+    large mammalian-scale assemblies. The package represents a complete pipeline.
+    It takes raw PacBio/ONT reads as input and outputs polished contigs. Flye
+    also has a special mode for metagenome assembly
+  src_dir: Flye-{{version}}
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - "{{compiler}}/{{compiler_version}}"
+      - python/{{versions.python3}}
+  extras: README* LICENSE
+  install:
+    makeinstall: >
+      python setup.py install --root $(ROOT)
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - "python_{{versions.python3}}"
+  files:
+    - "{{parent}}"
+    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
