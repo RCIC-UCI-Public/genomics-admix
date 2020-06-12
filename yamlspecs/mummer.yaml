@@ -26,7 +26,7 @@
   requires:
     - "{{compiler}}_{{compiler_version}}"
     - gnuplot
-  rpm: !include rpm.extras.filter.yaml
+  rpmFilters: *Requires
 
 # for viz tools of mummer
 #fig2dev (3.2.3)
