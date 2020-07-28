@@ -1,0 +1,27 @@
+!include common.yaml
+---
+- package: MIDAS 
+  name: midas 
+  version: "{{versions.midas}}"
+  src_dir: "{{package}}-{{version}}"
+  vendor_source: https://github.com/snayfach/MIDAS/archive/v{{version}}.{{extension}}
+  description: |
+    Metagenomic Intra-Species Diversity Analysis System (MIDAS) {{version}} 
+    is an integrated pipeline that leverages >30,000 reference genomes 
+    to estimate bacterial species abundance and strain-level genomic 
+    variation, including gene content and SNPs, from shotgun metagnomes
+  build:
+    patchfile: "{{name}}-{{version}}.patch"
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{versions.python3}}
+  extras: README* LICENSE
+  install:
+    makeinstall: >
+      python setup.py install --root $(ROOT)
+  requires:
+    - "python_{{versions.python3}}"
+  files:
+    - "{{parent}}"
+    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
