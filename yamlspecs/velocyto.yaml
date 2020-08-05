@@ -1,0 +1,35 @@
+!include common.yaml
+---
+- package: velocyto 
+  name: velocyto 
+  version: "{{versions.velocyto}}"
+  vendor_source: https://github.com/velocyto-team/velocyto.py/archive/{{version}}.{{extension}}
+  description: |
+    Velocyto {{version}} is a library for the analysis of RNA velocity.
+    Velocyto includes a command line tool and an analysis pipeline
+  src_dir: "{{name}}.py-{{version}}"
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - "{{compiler}}/{{compiler_version}}"
+      - python/{{versions.python3}}
+  install:
+    makeinstall: >
+      python setup.py install --root $(ROOT)
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - "python_{{versions.python3}}"
+    - "python_{{versions.python3}}-numpy"
+    - "python_{{versions.python3}}-scipy"
+    - "python_{{versions.python3}}-cython"
+    - "python_{{versions.python3}}-matplotlib"
+    - "python_{{versions.python3}}-h5py"
+    - "python_{{versions.python3}}-pandas"
+    - "python_{{versions.python3}}-pysam"
+    - "python_{{versions.python3}}-scikit-learn"
+    - "python_{{versions.python3}}-click"
+    - numba_{{versions.numba}}
+    - loompy_{{versions.loompy}}
+  files:
+    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"

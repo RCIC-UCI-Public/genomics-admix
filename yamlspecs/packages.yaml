@@ -2,6 +2,13 @@ system:
   - zlib-devel
   - perl-Time-Piece
 bootstrap:
+  - click
+  - llvmlite
+  - numpy-groupies
+  - numba
+  - numba-module
+  - loompy
+  - loompy-module
 build:
   - plink
   - plink-module
@@ -13,5 +20,8 @@ build:
   - flye-module
   - mummer
   - mummer-module
+  - velocyto
+  - velocyto-module
 manifest:
+  - "{{bootstrap}}"
   - "{{build}}"

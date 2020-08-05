@@ -1,0 +1,17 @@
+# Builds the module for loompy.
+!include loompy.yaml
+!include rcic-module.yaml
+---
+- package: loompy module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path: ""
+    prereq: 
+      - *ModuleCompiler_prereq
+      - python/{{versions.python3}}
+      - llvm/{{versions.llvm}}
+    requires:
+      - *ModuleCompiler_requires
+      - python_{{versions.python3}}-module
+      - llvm_{{versions.llvm}}-module

@@ -1,0 +1,24 @@
+!include common.yaml
+---
+- package: click 
+  name: click
+  baserpm: python_{{versions.python3}}-{{name}} 
+  version: "{{versions.click}}"
+  vendor_source: https://github.com/pallets/click/archive/{{version}}.{{extension}}
+  description: |
+    Click {{version}} is a Python package for creating beautiful command line
+    interfaces in a composable way with as little code as necessary. It is 
+    the 'Command Line Interface Creation Kit'. It is highly configurable 
+    but comes with sensible defaults out of the box
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{versions.python3}}
+  install:
+    makeinstall: >
+      python setup.py install --root $(ROOT)
+  requires:
+    - "python_{{versions.python3}}"
+  files:
+    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"

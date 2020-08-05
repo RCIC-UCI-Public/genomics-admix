@@ -1,0 +1,31 @@
+!include common.yaml
+---
+- package: numba 
+  name: numba 
+  version: "{{versions.numba}}"
+  vendor_source: https://github.com/numba/numba/archive/{{version}}.{{extension}}
+  description: |
+    A Just-In-Time Compiler for Numerical Functions in Python
+    Numba {{version}} is an open source, NumPy-aware optimizing compiler for Python 
+    sponsored by Anaconda, Inc. It uses the LLVM compiler project to generate machine
+    code from Python syntax. Numba can compile a large subset of numerically-focused
+    Python, including many NumPy functions. Additionally, Numba has support for automatic
+    parallelization of loops, generation of GPU-accelerated code, and creation of ufuncs
+    and C callbacks. For more information about Numba, see http://numba.pydata.org
+  build:
+    pkgmake: >
+      export CXXFLAGS=-fPIC;
+      python setup.py build
+    modules: 
+      - "{{compiler}}/{{compiler_version}}"
+      - python/{{versions.python3}}
+      - llvm/{{versions.llvm}}
+  install:
+    makeinstall: >
+      python setup.py install --root $(ROOT)
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - python_{{versions.python3}}
+    - python_{{versions.python3}}-llvmlite
+  files:
+    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
