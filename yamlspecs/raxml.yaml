@@ -1,0 +1,29 @@
+!include common.yaml
+---
+- package: RAxML 
+  name: raxml 
+  version: "{{versions.raxml}}"
+  vendor_source: https://github.com/stamatak/standard-RAxML/archive/v{{version}}.{{extension}}
+  src_dir: standard-{{package}}-{{version}}
+  description: |
+    RAxML - Randomized Axelerated Maximum Likelihood {{version}} is a tool
+    for Phylogenetic Analysis and Post-Analysis of Large Phylogenies.
+    See https://cme.h-its.org/exelixis/web/software/raxml/index.html
+    For how to cite using RAxML please see {{root}}/README
+  build:
+    modules: 
+      - "{{compiler}}/{{compiler_version}}"
+    binaries: "raxmlHPC-PTHREADS-SSE3 raxmlHPC-SSE3"
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       make -f Makefile.SSE3.gcc;
+       make -f Makefile.SSE3.PTHREADS.gcc;
+       $(INSTALL) -m 755 {{build.binaries}} $(ROOT){{root}}/bin;
+       $(INSTALL) -m 755 usefulScripts/* $(ROOT){{root}}/bin;
+       $(INSTALL) -m 644 gpl-3.0.txt $(ROOT){{root}}/LICENSE;
+       $(INSTALL) -m 644 README $(ROOT){{root}}/README
+
+#NOTE: 
+#make -f Makefile.SSE3.MPI.gcc       # coarse grain mpi
+#make -f Makefile.SSE3.HYBRID.gcc    # hybrid mpi/threads
