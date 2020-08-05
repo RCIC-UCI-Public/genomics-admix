@@ -18,7 +18,6 @@
       - foundation
       - "{{compiler}}/{{compiler_version}}"
     pkgmake: make
-  extras: ACKNOWLEDGEMENTS COPYRIGHT LICENSE.md
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}};
