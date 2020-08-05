@@ -14,16 +14,16 @@
     modules: 
       - "{{compiler}}/{{compiler_version}}"
     binaries: "raxmlHPC-PTHREADS-SSE3 raxmlHPC-SSE3"
+  extras: README LICENSE
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}}/bin;
        make -f Makefile.SSE3.gcc;
        make -f Makefile.SSE3.PTHREADS.gcc;
+       cp gpl-3.0.txt LICENSE;
        $(INSTALL) -m 755 {{build.binaries}} $(ROOT){{root}}/bin;
-       $(INSTALL) -m 755 usefulScripts/* $(ROOT){{root}}/bin;
-       $(INSTALL) -m 644 gpl-3.0.txt $(ROOT){{root}}/LICENSE;
-       $(INSTALL) -m 644 README $(ROOT){{root}}/README
+       $(INSTALL) -m 755 usefulScripts/* $(ROOT){{root}}/bin
 
-#NOTE: 
-#make -f Makefile.SSE3.MPI.gcc       # coarse grain mpi
-#make -f Makefile.SSE3.HYBRID.gcc    # hybrid mpi/threads
+# Additional possible targets 
+#   make -f Makefile.SSE3.MPI.gcc       # coarse grain mpi
+#   make -f Makefile.SSE3.HYBRID.gcc    # hybrid mpi/threads
