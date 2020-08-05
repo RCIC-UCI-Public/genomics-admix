@@ -1,0 +1,14 @@
+# Builds the module for prodigal.
+!include prodigal.yaml
+!include rcic-module.yaml
+---
+- package: prodigal module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path: 
+      - PATH {{root}}/bin
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *ModuleCompiler_requires

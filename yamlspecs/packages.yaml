@@ -22,6 +22,10 @@ build:
   - mummer-module
   - velocyto
   - velocyto-module
+  - raxml
+  - raxml-module
+  - prodigal
+  - prodigal-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
