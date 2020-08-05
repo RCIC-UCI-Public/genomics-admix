@@ -18,7 +18,6 @@
     modules: 
       - "{{compiler}}/{{compiler_version}}"
       - python/{{versions.python3}}
-  extras: README* LICENSE
   install:
     makeinstall: >
       python setup.py install --root $(ROOT)
@@ -26,5 +25,4 @@
     - "{{compiler}}_{{compiler_version}}"
     - "python_{{versions.python3}}"
   files:
-    - "{{parent}}"
     - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"

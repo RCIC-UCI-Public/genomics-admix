@@ -16,12 +16,10 @@
       python setup.py build
     modules: 
       - python/{{versions.python3}}
-  extras: README* LICENSE
   install:
     makeinstall: >
       python setup.py install --root $(ROOT)
   requires:
     - "python_{{versions.python3}}"
   files:
-    - "{{parent}}"
     - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
