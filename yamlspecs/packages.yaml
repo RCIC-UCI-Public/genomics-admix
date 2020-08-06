@@ -4,5 +4,7 @@ bootstrap:
 build:
   - plink
   - plink-module
+  - scHLAcount
+  - scHLAcount-module
 manifest:
   - "{{ build }}"

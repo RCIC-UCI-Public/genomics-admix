@@ -1,0 +1,27 @@
+!include rcic-package.yaml 
+!include rpm.yaml
+---
+- package:  scHLAcount 
+  name: scHLAcount
+  versions: !include versions.yaml
+  version: "{{versions.scHLAcount.version}}"
+  hash: "{{versions.scHLAcount.hash}}"
+  src_dir: "{{name}}-{{hash}}"
+  extension: zip
+  vendor_source: https://github.com/10XGenomics/scHLAcount/archive/{{hash}}.{{extension}}
+  description: |
+    scHLAcount {{version}} scHLAcount you to count molecules in 
+    single-cell RNA-seq data for class I genes HLA-A, B, and C; 
+    and class II genes DPA1, DPB1, DRA1, DRB1, DQA1, and DQB1 
+    using a personalized reference genome. You can either use 
+    provided HLA types determined by alternative methods or 
+    call HLA types with this tool then quantify against those 
+    calls.  
+  build:
+    modules: rustc/{{versions.rustc}}
+    configure: echo built with cargo install 
+    pkgmake: echo built with cargo install 
+  install:
+     makeinstall: >
+       export CARGO_HOME=$$(pwd);
+       cargo install --locked --root=$(ROOT){{root}}

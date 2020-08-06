@@ -1,5 +1,5 @@
 ---
-gcc: "8.3.0" 
+gcc: "8.4.0" 
 mkl: "2019.5.281"
 python: "2.7.17"
 python_major: "2.7"
@@ -11,3 +11,8 @@ rMATS: "4.0.2"
 #perl: "5.30.0"
 #python3: "3.8.0"
 #python3_major: "3.8"
+scHLAcount:
+  version: "0.1.1"
+  hash: "b1f08db08dad2c14453df3d4b3edfe67606bb9e6"
+rustc: "1.45.0"
+
