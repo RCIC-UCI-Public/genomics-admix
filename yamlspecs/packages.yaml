@@ -26,6 +26,8 @@ build:
   - raxml-module
   - prodigal
   - prodigal-module
+  - scHLAcount
+  - scHLAcount-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

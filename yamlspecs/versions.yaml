@@ -22,3 +22,7 @@ loompy: "3.0.6"
 velocyto: "0.17.17"
 raxml: "8.2.12"
 prodigal: "2.6.3"
+scHLAcount:
+  version: "0.1.1"
+  hash: "b1f08db08dad2c14453df3d4b3edfe67606bb9e6"
+rustc: "1.45.0"
