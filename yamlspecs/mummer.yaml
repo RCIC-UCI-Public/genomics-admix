@@ -14,6 +14,7 @@
     - filter-requires-{{name}}.sh
   build:
     configure: ./configure
+    configure_args: --prefix={{root}}
     modules:
       - foundation
       - "{{compiler}}/{{compiler_version}}"
