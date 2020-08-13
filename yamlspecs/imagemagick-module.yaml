@@ -1,0 +1,11 @@
+# Builds module for imagemagick
+!include imagemagick.yaml
+!include rcic-module.yaml
+---
+- package: imagemagick Module
+  category: TOOLS
+  module:
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *ModuleCompiler_requires

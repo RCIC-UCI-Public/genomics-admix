@@ -1,6 +1,26 @@
 system:
   - zlib-devel
   - perl-Time-Piece
+  - bzip2-devel
+  - cairo-devel
+  - fontconfig-devel
+  - freetype-devel
+  - glib2-devel
+  - libgomp
+  - libICE-devel
+  - xz-libs
+  - libtool-ltdl-devel
+  - pango-devel
+  - libjpeg-turbo-devel
+  - libpng-devel
+  - libtiff-devel
+  - libSM-devel
+  - libxml2-devel
+  - libX11-devel
+  - libXext-devel
+  - libXt-devel
+  - zlib-devel
+  - ghostscript
 bootstrap:
   - click
   - llvmlite
@@ -9,6 +29,8 @@ bootstrap:
   - numba-module
   - loompy
   - loompy-module
+  - imagemagick
+  - imagemagick-module
 build:
   - plink
   - plink-module
@@ -28,6 +50,8 @@ build:
   - prodigal-module
   - scHLAcount
   - scHLAcount-module
+  - cdhit
+  - cdhit-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

@@ -8,6 +8,7 @@ java:
   version: "1.8.0"
   name: java8 
 llvm: "9.0.1"
+perl: "5.30.0"
 plink: "2.00a2.3"
 rMATS: "4.0.2"
 canu: "2.0"
@@ -26,3 +27,7 @@ scHLAcount:
   version: "0.1.1"
   hash: "b1f08db08dad2c14453df3d4b3edfe67606bb9e6"
 rustc: "1.45.0"
+cdhit: "4.8.1"
+imagemagick:
+  version: "7.0.10.26"
+  versionRev: "7.0.10-26"

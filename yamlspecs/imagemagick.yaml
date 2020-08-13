@@ -1,0 +1,39 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: ImageMagick
+  name: imagemagick
+  versions: !include versions.yaml
+  version: "{{versions.imagemagick.version}}"
+  versionRev: "{{versions.imagemagick.versionRev}}"
+  compiler: gcc
+  compiler_version: "{{versions.gcc}}"
+  vendor_source: https://github.com/ImageMagick/ImageMagick/archive/{{versionRev}}.{{extension}}
+  description: |
+    Use ImageMagic {{versionRev}} to create, edit, compose, or convert bitmap images.
+    It can read and write images in a variety of formats (over 200) including 
+    PNG, JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. 
+    Website https://imagemagick.org
+  src_dir: "{{package}}-{{versionRev}}"
+  addfile: 
+    - filter-requires-{{name}}.sh
+    - filter-provides-{{name}}.sh
+  build:
+    configure: ./configure
+    configure_args: --prefix={{root}} --enable-shared --with-perl --with-modules
+    modules:
+      - "{{compiler}}/{{compiler_version}}"
+      - perl/{{versions.perl}}
+    pkgmake: make
+  install:
+     makeinstall: >
+       echo "{{versions.perl}}" > ../PERLVERSION;
+       mkdir -p $(ROOT){{root}};
+       make DESTDIR=$(ROOT) install
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - perl_{{versions.perl}}
+  files:
+    - "{{parent}}"
+    - "{{pkg_defaults.app_path}}/perl/{{versions.perl}}"
+  rpmFilters: *filterRequiresProvides
