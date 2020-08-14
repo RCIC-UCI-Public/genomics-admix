@@ -1,0 +1,40 @@
+!include common.yaml
+---
+- package: Roary
+  name: roary
+  versions: !include versions.yaml
+  version: "{{versions.roary}}"
+  vendor_source: https://github.com/sanger-pathogens/Roary/archive/v{{version}}.{{extension}}
+  description: |
+    Roary {{version}} takes annotated assemblies in GFF3 format and calculates the pan genome.
+  src_dir: "{{package}}-{{version}}"
+  addfile: 
+    - filter-requires-{{name}}.sh
+    - filter-provides-{{name}}.sh
+  install:
+     makeinstall: >
+       echo "{{versions.perl}}" > ../PERLVERSION;
+       mkdir -p $(ROOT){{root}};
+       cp -p -r bin $(ROOT){{root}};
+       cp -p -r lib $(ROOT){{root}};
+       $(INSTALL) -m 644 GPL-LICENSE $(ROOT){{root}}
+  rpmFilters: *filterRequiresProvides
+
+  requires:
+    - ncbi-blast_{{versions.ncbi_blast}}
+    - cdhit_{{versions.cdhit}}
+    - fasttree_{{versions.fasttree}}
+    - mcl_{{versions.mcl.version}}
+    - mafft_{{versions.mafft}}
+    - prank_{{versions.prank}}
+#    - perl_{{versions.perl}}-Array-Utils
+#    - perl_{{versions.perl}}-Bio-Procedural
+#    - perl_{{versions.perl}}-File-Find-Rule
+#    - perl_{{versions.perl}}-File-Grep
+#    - perl_{{versions.perl}}-File-Slurper
+#    - perl_{{versions.perl}}-Graph-ReadWrite
+#    - perl_{{versions.perl}}-Log-Log4perl
+#    - perl_{{versions.perl}}-Moose
+#    - perl_{{versions.perl}}-Text-CSV
+#    - perl_{{versions.perl}}-Devel-OverloadInfo
+#    - perl_{{versions.perl}}-Digest-MD5-File

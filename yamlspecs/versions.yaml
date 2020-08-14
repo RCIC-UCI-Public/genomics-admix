@@ -9,6 +9,7 @@ java:
   name: java8 
 llvm: "9.0.1"
 perl: "5.30.0"
+ncbi_blast: "2.10.0"
 plink: "2.00a2.3"
 rMATS: "4.0.2"
 canu: "2.0"
@@ -36,3 +37,5 @@ mcl:
   versionRev: "14-137"
 prank: "170427"
 mafft: "7.471"
+fasttree: "2.1.11"
+roary: "3.13.0"

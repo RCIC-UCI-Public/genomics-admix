@@ -1,0 +1,26 @@
+# Builds the module for roary.
+!include roary.yaml
+!include rcic-module.yaml
+---
+- package: roary module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path: ""
+    prereq: 
+      - perl/{{versions.perl}}
+      - ncbi-blast/{{versions.ncbi_blast}}
+      - cdhit/{{versions.cdhit}}
+      - fasttree/{{versions.fasttree}}
+      - mcl/{{versions.mcl.version}}
+      - mafft/{{versions.mafft}}
+      - prank/{{versions.prank}}
+    requires:
+      - *Requires
+      - perl_{{versions.perl}}-module
+      - ncbi-blast_{{versions.ncbi_blast}}-module
+      - cdhit_{{versions.cdhit}}-module
+      - fasttree_{{versions.fasttree}}-module
+      - mcl_{{versions.mcl.version}}-module
+      - mafft_{{versions.mafft}}-module
+      - prank_{{versions.prank}}-module

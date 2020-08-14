@@ -1,0 +1,27 @@
+!include common.yaml
+---
+- package: FastTree
+  name: fasttree
+  versions: !include versions.yaml
+  version: "{{versions.fasttree}}"
+  compiler: gcc
+  compiler_version: "{{versions.gcc}}"
+  extension: c
+  vendor_source: http://www.microbesonline.org/fasttree/{{package}}-{{version}}.{{extension}}
+  description: |
+    FastTree {{version}} infers approximately-maximum-likelihood phylogenetic trees from
+    alignments of nucleotide or protein sequences. FastTree can handle alignments with
+    up to a million of sequences in a reasonable amount of time and memory. For large
+    alignments, FastTree is 100-1000 times faster than PhyML 3.0 or RAxML 7. 
+    FastTree is open-source software, see http://www.microbesonline.org/fasttree
+  no_src_dir: True
+  srcfile: "{{name}}-{{version}}.{{extension}}"
+  install:
+     makeinstall: >
+       gcc -O3 -finline-functions -funroll-loops -Wall -o {{package}} {{srcfile}} -lm;
+       gcc -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o {{package}}MP {{srcfile}} -lm;
+       mkdir -p $(ROOT){{root}}/bin;
+       $(INSTALL) -m 755 {{package}} $(ROOT){{root}}/bin;
+       $(INSTALL) -m 755 {{package}}MP $(ROOT){{root}}/bin
+  requires:
+    - "{{compiler}}_{{compiler_version}}"

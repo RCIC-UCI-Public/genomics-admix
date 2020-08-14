@@ -58,6 +58,10 @@ build:
   - prank-module
   - mafft
   - mafft-module
+  - fasttree
+  - fasttree-module
+  - roary
+  - roary-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
