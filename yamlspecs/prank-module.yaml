@@ -1,0 +1,15 @@
+# Builds module for prank
+!include prank.yaml
+!include rcic-module.yaml
+---
+- package: prank module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path:
+      - PATH {{root}}/bin
+      - MANPATH {{root}}/share/man
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *ModuleCompiler_requires

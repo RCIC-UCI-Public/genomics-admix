@@ -31,3 +31,8 @@ cdhit: "4.8.1"
 imagemagick:
   version: "7.0.10.26"
   versionRev: "7.0.10-26"
+mcl: 
+  version: "14.137"
+  versionRev: "14-137"
+prank: "170427"
+mafft: "7.471"

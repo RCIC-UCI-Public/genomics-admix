@@ -1,0 +1,30 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: MCL
+  name: mcl
+  versions: !include versions.yaml
+  version: "{{versions.mcl.version}}"
+  versionRev: "{{versions.mcl.versionRev}}"
+  compiler: gcc
+  compiler_version: "{{versions.gcc}}"
+  vendor_source: https://micans.org/mcl/src/{{name}}-{{versionRev}}.{{extension}}
+  description: |
+   The MCL {{version}} algorithm is short for the Markov Cluster Algorithm, a fast 
+   and scalable unsupervised cluster algorithm for graphs (also known as networks)
+   based on simulation of (stochastic) flow in graphs. See https://micans.org/mcl
+  src_dir: "{{name}}-{{versionRev}}"
+  build:
+    configure: ./configure
+    configure_args: --prefix={{root}} --enable-blast
+    modules:
+      - "{{compiler}}/{{compiler_version}}"
+    pkgmake: make
+  editfile: "src/alien/oxygen/src/mcxdeblast"
+  install:
+     makeinstall: >
+       sed -i -e  '2a use warnings;' -e '1a \#\!\/usr\/bin\/env perl' -e '1d' {{editfile}};
+       mkdir -p $(ROOT){{root}};
+       make DESTDIR=$(ROOT) install
+  requires:
+    - "{{compiler}}_{{compiler_version}}"

@@ -1,0 +1,16 @@
+# Builds module for mafft
+!include mafft.yaml
+!include rcic-module.yaml
+---
+- package: mafft module
+  category: GENOMICS
+  module:
+    setenv: 
+      - MAFFT_BINARIES {{root}}/libexec/{{name}}
+    prepend_path:
+      - PATH {{root}}/bin
+      - MANPATH {{root}}/share/man
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *ModuleCompiler_requires

@@ -52,6 +52,12 @@ build:
   - scHLAcount-module
   - cdhit
   - cdhit-module
+  - mcl
+  - mcl-module
+  - prank
+  - prank-module
+  - mafft
+  - mafft-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
