@@ -4,6 +4,7 @@
 ---
 - package: plink Module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path:
@@ -12,5 +13,5 @@
       - *ModuleCompiler_prereq
       - mkl/{{versions.mkl}}
     requires:
-      - *ModuleCompiler_requires
-      - mkl_{{versions.mkl}}-module
+      - *Requires
+      - "{{module.prereq}}"

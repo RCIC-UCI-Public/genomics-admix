@@ -4,6 +4,7 @@
 ---
 - package: fasttree module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path:

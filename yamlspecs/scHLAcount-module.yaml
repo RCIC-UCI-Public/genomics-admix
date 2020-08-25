@@ -1,0 +1,10 @@
+# Builds module for scHLAcount
+!include scHLAcount.yaml
+!include rcic-module.yaml
+---
+- package: scHLAcount Module
+  category: GENOMICS
+  release: 2
+  module:
+    prepend_path:
+      - PATH {{root}}/bin

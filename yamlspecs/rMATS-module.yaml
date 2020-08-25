@@ -5,6 +5,7 @@
 - package: rMATS Module
 #  pkgname: "{{name}}_{{version}}-module"
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path:
@@ -15,4 +16,5 @@
       - python/{{versions.python}}
     requires:
       - *Requires
-      - python_{{versions.python}}-module
+      - "{{module.prereq}}"
+

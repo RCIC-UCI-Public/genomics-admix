@@ -4,6 +4,7 @@
 ---
 - package: mummer module
   category: GENOMICS
+  release: 2
   module:
     prereq:
       - *ModuleCompiler_prereq

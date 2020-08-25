@@ -4,6 +4,7 @@
 ---
 - package: roary module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path: ""
@@ -17,10 +18,4 @@
       - prank/{{versions.prank}}
     requires:
       - *Requires
-      - perl_{{versions.perl}}-module
-      - ncbi-blast_{{versions.ncbi_blast}}-module
-      - cdhit_{{versions.cdhit}}-module
-      - fasttree_{{versions.fasttree}}-module
-      - mcl_{{versions.mcl.version}}-module
-      - mafft_{{versions.mafft}}-module
-      - prank_{{versions.prank}}-module
+      - "{{module.prereq}}"

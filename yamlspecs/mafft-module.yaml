@@ -4,6 +4,7 @@
 ---
 - package: mafft module
   category: GENOMICS
+  release: 2
   module:
     setenv: 
       - MAFFT_BINARIES {{root}}/libexec/{{name}}

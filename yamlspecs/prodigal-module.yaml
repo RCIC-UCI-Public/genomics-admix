@@ -3,6 +3,7 @@
 !include rcic-module.yaml
 ---
 - package: prodigal module
+  release: 2
   category: GENOMICS
   module:
     setenv: ""

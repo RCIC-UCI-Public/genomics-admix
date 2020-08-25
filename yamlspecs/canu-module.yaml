@@ -4,6 +4,7 @@
 ---
 - package: canu Module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path:
@@ -13,4 +14,4 @@
       - *ModuleCompiler_prereq
     requires:
       - *ModuleCompiler_requires
-      - "{{versions.java.name}}-module"
+      - "{{modules.prereq}}"

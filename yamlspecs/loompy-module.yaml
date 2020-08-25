@@ -4,6 +4,7 @@
 ---
 - package: loompy module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path: ""
@@ -12,6 +13,5 @@
       - python/{{versions.python3}}
       - llvm/{{versions.llvm}}
     requires:
-      - *ModuleCompiler_requires
-      - python_{{versions.python3}}-module
-      - llvm_{{versions.llvm}}-module
+      - *Requires
+      - "{{module.prereq}}"

@@ -4,6 +4,7 @@
 ---
 - package: midas module
   category: GENOMICS
+  release; 2
   module:
     setenv: 
       - MIDAS_HOME {{pkg_defaults.app_path}}/python/{{versions.python3}}/bin
@@ -12,4 +13,5 @@
       - python/{{versions.python3}}
     requires:
       - *Requires
-      - python_{{versions.python3}}-module
+      - "{{module.prereq}}"
+

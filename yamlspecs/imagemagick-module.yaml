@@ -4,6 +4,7 @@
 ---
 - package: imagemagick Module
   category: TOOLS
+  release: 2
   module:
     prereq:
       - *ModuleCompiler_prereq

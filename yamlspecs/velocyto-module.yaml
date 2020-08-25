@@ -4,6 +4,7 @@
 ---
 - package: velocyto module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path: ""
@@ -13,5 +14,4 @@
       - llvm/{{versions.llvm}}
     requires:
       - *ModuleCompiler_requires
-      - python_{{versions.python3}}-module
-      - llvm_{{versions.llvm}}-module
+      - "{{module.prereq}}"

@@ -4,6 +4,7 @@
 ---
 - package: cdhit module
   category: GENOMICS
+  release: 2
   module:
     setenv: ""
     prepend_path:
@@ -14,5 +15,4 @@
       - imagemagick/{{versions.imagemagick.version}}
     requires:
       - *ModuleCompiler_requires
-      - perl_{{versions.perl}}
-      - imagemagick_{{versions.imagemagick.version}}
+      - "{{module.prereq}}"
