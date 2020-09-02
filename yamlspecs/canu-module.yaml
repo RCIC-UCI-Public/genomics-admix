@@ -14,4 +14,4 @@
       - *ModuleCompiler_prereq
     requires:
       - *ModuleCompiler_requires
-      - "{{modules.prereq}}"
+      - "{{module.prereq}}"

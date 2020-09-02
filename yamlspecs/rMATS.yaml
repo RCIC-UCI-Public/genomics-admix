@@ -14,7 +14,7 @@
     of a gene between two conditions exceeds a given user-defined threshold. 
     See http://rnaseq-mats.sourceforge.net/index.html
   build:
-    modules: ""
+    modules:  ""
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}}/;
