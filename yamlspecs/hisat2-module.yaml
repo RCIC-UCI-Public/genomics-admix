@@ -1,0 +1,18 @@
+# Builds the module for hisat2.
+!include hisat2.yaml
+!include rcic-module.yaml
+---
+- package: hisat2 Module
+  category: GENOMICS
+  release: 2
+  module:
+#    setenv: 
+    prepend_path:
+      - *Flagspath
+      - PATH {{root}}/bin
+      - LD_LIBRARY_PATH {{root}}/lib
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *ModuleCompiler_requires
+      - "{{module.prereq}}"

@@ -1,0 +1,30 @@
+!include common.yaml
+---
+- package: hisat2 
+  name: hisat2 
+  version: "{{versions.hisat2}}"
+  extension: zip
+  vendor_source: https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download
+  description: |
+    HISAT2 {{version}} is a fast and sensitive alignment program for mapping 
+    next-generation sequencing reads (both DNA and RNA) to a population of
+    human genomes as well as to a single reference genome. 
+    See https://daehwankimlab.github.io/hisat2/
+  build:
+    modules: 
+      - "{{compiler}}/{{compiler_version}}"
+      - ncbi-ngs/{{versions.ncbi_ngs}}
+      - ncbi-vdb/{{versions.ncbi_vdb}}
+    pkgmake: >
+      sed -i -e "s/(SEARCH_INC)/(SEARCH_INC) /" Makefile;
+      make USE_SRA=1 NCBI_NGS_DIR=$$NGS_HOME NCBI_VDB_DIR=$$VDB_HOME allall ht2lib
+  extras: LICENSE TUTORIAL
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       cp -p hisat2 hisat2-* *.py $(ROOT){{root}}/bin;
+       mkdir -p $(ROOT){{root}}/lib;
+       cp -p lib*.so lib*.a $(ROOT){{root}}/lib;
+       mkdir -p $(ROOT){{root}}/include;
+       cp -p *.h  $(ROOT){{root}}/include;
+       chmod 644 $(ROOT){{root}}/include/*.h
