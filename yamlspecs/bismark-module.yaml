@@ -1,0 +1,18 @@
+# Builds the module for bismark.
+!include bismark.yaml
+!include rcic-module.yaml
+---
+- package: bismark module
+  category: GENOMICS
+  release: 2
+  module:
+    prepend_path: 
+      - PATH {{root}}
+    prereq: 
+      - perl/{{versions.perl}}
+      - samtools/{{versions.samtools}}
+      - bowtie2/{{versions.bowtie2}}
+      - hisat2/{{versions.hisat2}}
+    requires:
+      - *Requires
+      - "{{module.prereq}}"

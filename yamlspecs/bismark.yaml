@@ -1,0 +1,20 @@
+!include common.yaml
+---
+- package: Bismark
+  name: bismark
+  version: "{{versions.bismark}}"
+  vendor_source: https://github.com/FelixKrueger/Bismark/archive/{{version}}.{{extension}}
+  src_dir: "{{package}}-{{version}}"
+  description: |
+    Bismark {{version}} is a program to map bisulfite treated sequencing reads
+    to a genome of interest and perform methylation calls in a single step
+  addfile: 
+    - filter-requires-{{name}}.sh
+  build:
+    modules: ""
+  install:
+     makeinstall: >
+       echo "{{versions.perl}}" > ../PERLVERSION;
+       mkdir -p $(ROOT){{root}};
+       cp -p -r * $(ROOT){{root}}
+  rpmFilters: *filterRequires

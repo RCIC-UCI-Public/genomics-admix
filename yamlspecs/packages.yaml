@@ -66,6 +66,8 @@ build:
   - midas-module
   - hisat2
   - hisat2-module
+  - bismark
+  - bismark-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
