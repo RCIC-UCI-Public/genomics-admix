@@ -1,0 +1,11 @@
+# Builds module for stringtie
+!include stringtie.yaml
+!include rcic-module.yaml
+---
+- package: stringtie module
+  category: GENOMICS
+  release: 2
+  module:
+    setenv: ""
+    prepend_path: 
+      - PATH {{root}}/bin

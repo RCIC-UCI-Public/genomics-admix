@@ -1,0 +1,25 @@
+!include common.yaml
+---
+- package: IGV 
+  name: igv 
+  version: "{{versions.igv}}"
+  extension: zip
+  vendor_source: https://data.broadinstitute.org/igv/projects/downloads/2.8/IGV_Linux_{{version}}.{{extension}}
+  description: |
+    The Integrative Genomics Viewer (IGV) {{version}} is a high-performance, easy-to-use,
+    interactive tool for the visual exploration of genomic data. It supports flexible
+    integration of all the common types of genomic data and metadata, investigator-
+    generated or publicly available, loaded from local or cloud sources.
+    See https://software.broadinstitute.org/software/igv
+  src_dir: "{{package}}_Linux_{{version}}"
+  addfile: 
+    - filter-requires-{{name}}.sh
+  build:
+    modules: ""
+  install:
+     makeinstall: >
+      mkdir -p $(ROOT)/{{root}};
+      mv * $(ROOT)/{{root}}
+  rpmJarRepack: 0
+  rpmFilters: *filterRequires
+  requires: ""

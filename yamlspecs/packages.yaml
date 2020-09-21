@@ -68,6 +68,10 @@ build:
   - hisat2-module
   - bismark
   - bismark-module
+  - stringtie
+  - stringtie-module
+  - igv
+  - igv-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

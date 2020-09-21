@@ -1,0 +1,12 @@
+# Builds the module for igv.
+!include igv.yaml
+!include rcic-module.yaml
+---
+- package: igv module
+  category: GENOMICS
+  module:
+    setenv: ""
+    alias:
+      - igv "{{root}}/{{name}}.sh"
+    prepend_path: 
+      - PATH {{root}}
