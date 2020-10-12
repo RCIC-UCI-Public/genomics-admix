@@ -72,6 +72,8 @@ build:
   - stringtie-module
   - igv
   - igv-module
+  - diamond
+  - diamond-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
