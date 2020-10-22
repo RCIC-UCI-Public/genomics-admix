@@ -1,0 +1,10 @@
+# Builds module for bedops
+!include bedops.yaml
+!include rcic-module.yaml
+---
+- package: bedops Module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path:
+      - PATH {{root}}/bin

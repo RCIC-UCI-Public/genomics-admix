@@ -1,0 +1,20 @@
+!include common.yaml
+---
+- package: bedops
+  name: bedops
+  version: "{{versions.bedops}}"
+  vendor_source: https://github.com/bedops/bedops/archive/v{{version}}.{{extension}}
+  description: |
+    BEDOPS {{version}} is an open-source command-line toolkit that performs highly
+    efficient and scalable Boolean and other set operations, statistical calculations,
+    archiving, conversion and other management of genomic data of arbitrary scale.
+    See https://bedops.readthedocs.io/en/latest/content/overview.html
+  build:
+    pkgmake: make all
+  extras: LICENSE README.md
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       make install_all;
+       cp bin/* $(ROOT){{root}}/bin
+  requires: ""
