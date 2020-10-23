@@ -76,6 +76,8 @@ build:
   - diamond-module
   - bedops
   - bedops-module
+  - bionetgen
+  - bionetgen-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

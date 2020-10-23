@@ -1,0 +1,44 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: BioNetGen
+  name: bionetgen
+  versions: !include versions.yaml
+  version: "{{versions.bionetgen}}"
+  compiler: gcc
+  compiler_version: "{{versions.gcc}}"
+  vendor_source: http://github.com/RuleWorld/bionetgen/archive/{{package}}-{{version}}.{{extension}}
+  src_dir: "{{name}}-{{package}}-{{version}}"
+  description: |
+    BioNetGen {{version}} is software for the specification and simulation
+    of rule-based models of biochemical systems, including signal 
+    transduction, metabolic, and genetic regulatory networks. 
+    See https://github.com/RuleWorld/bionetgen
+  addfile: 
+    - filter-requires-{{name}}.sh
+  build:
+    configure: "echo no configure"
+    configure_args: ""
+    modules:
+      - "{{compiler}}/{{compiler_version}}"
+      - foundation
+      - python/{{versions.python3}}
+    pkgmake: >
+      echo "{{versions.perl}}" > ../PERLVERSION;
+      cd bng2;
+      sed -i -e '/\tgit/d' Makefile;
+      sed -i -e 's/^BNG_VERSION =.*/BNG_VERSION = {{version}}/' Makefile; 
+      tar xzf $(REDHAT.ROOT)/sources/atomizer-{{versions.bionetgenmodules}}.{{extension}};
+      tar xzf $(REDHAT.ROOT)/sources/nfsim-{{versions.bionetgenmodules}}.{{extension}};
+      mv nfsim/* nfsim_src;
+      make;
+      make dist
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      cd bng2;
+      rm -rf {{package}}-{{version}}/Network3;
+      mv {{package}}-{{version}}/* $(ROOT){{root}} 
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+  rpmFilters: *filterRequires
