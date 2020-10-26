@@ -78,6 +78,8 @@ build:
   - bedops-module
   - bionetgen
   - bionetgen-module
+  - vcell
+  - vcell-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

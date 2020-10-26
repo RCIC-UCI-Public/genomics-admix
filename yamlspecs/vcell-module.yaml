@@ -1,0 +1,12 @@
+# Builds the module for vcell.
+!include vcell.yaml
+!include rcic-module.yaml
+---
+- package: vcell module
+  category: GENOMICS
+  module:
+    setenv: ""
+    alias:
+      - vcell "{{root}}/VCell-Rel"
+    prepend_path: 
+      - PATH {{root}}

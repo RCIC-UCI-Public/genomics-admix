@@ -1,0 +1,32 @@
+!include common.yaml
+---
+- package: VCELL 
+  name: vcell 
+  version: "{{versions.vcell}}"
+  extension: sh
+  vendor_source: https://vcell.org/webstart/Rel/VCell_Rel_unix_latest_64bit.sh
+  description: |
+    VCell (Virtual Cell) {{version}} is a comprehensive platform for modeling cell biological
+    systems that is built on a central database and disseminated as a web application.
+    This is a prebuild binary that contains a GUI client.
+  no_src_dir: true
+  build:
+    modules: ""
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}};
+       echo 'o' > answers;
+       echo '/tmp/{{name}}' >> answers;
+       echo 'n' >> answers;
+       echo 'n' >> answers;
+       bash {{name}}-{{version}}.{{extension}} < answers;
+       mv /tmp/{{name}}/* $(ROOT){{root}};
+       mv /tmp/{{name}}/.install4j $(ROOT){{root}};
+       rm -rf /tmp/{{name}};
+       rm -rf /root/.oracle_jre_usage/;
+       rm -rf /root/.install4j 
+  rpmAutoReqProv: no
+
+# Version is taken from info in <install-path>/VCell-Rel.vmoptions file 
+# -Dvcell.softwareVersion=Rel_Version_7.2.0_build_39
+

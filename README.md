@@ -27,5 +27,17 @@ A collection of Genomics applications
      git clone http://github.com/ruleworld/atomizer
      tar czf atomizer-20201022.tar.gz atomizer
      ```
-     There are release for these two. Tag both with the date of cloning repo, put resulting
-     tar on google drive
+   There are release for these two. Tag both with the date of cloning repo, put resulting
+   tar on google drive
+
+1. vcell
+
+   Version is taken from info in install-path/VCell-Rel.vmoptions file 
+   where it is recorded as  `-Dvcell.softwareVersion=Rel_Version_7.2.0_build_39`.
+
+   The downloaded installer file has no version but is linked on the URL as "latest".
+
+   The github repo https://github.com/virtualcell/vcell lists instrucitons how to build 
+   server/client with docker. 
+
+
