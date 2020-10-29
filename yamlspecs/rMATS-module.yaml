@@ -3,7 +3,6 @@
 !include rcic-module.yaml
 ---
 - package: rMATS Module
-#  pkgname: "{{name}}_{{version}}-module"
   category: GENOMICS
   release: 2
   module:

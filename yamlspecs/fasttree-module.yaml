@@ -9,7 +9,3 @@
     setenv: ""
     prepend_path:
       - PATH {{root}}/bin
-#    prereq:
-#      - *ModuleCompiler_prereq
-#    requires:
-#      - *ModuleCompiler_requires

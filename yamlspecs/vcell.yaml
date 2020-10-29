@@ -26,7 +26,3 @@
        rm -rf /root/.oracle_jre_usage/;
        rm -rf /root/.install4j 
   rpmAutoReqProv: no
-
-# Version is taken from info in <install-path>/VCell-Rel.vmoptions file 
-# -Dvcell.softwareVersion=Rel_Version_7.2.0_build_39
-
