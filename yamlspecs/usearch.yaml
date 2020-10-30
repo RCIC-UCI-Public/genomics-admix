@@ -1,0 +1,23 @@
+!include common.yaml
+---
+- package: USEARCH 
+  name: usearch 
+  version: "{{versions.usearch}}"
+  extension: gz
+  distrofile: "{{name}}{{version}}_i86linux32"
+  vendor_source: https://drive5.com/downloads/{{distrofile}}.{{extension}}
+  src_tarball: "{{distrofile}}.{{extension}}"
+  description: |
+    Usearch {{version}} is a unique sequence analysis tool with thousands
+    of users world-wide.  It offers search and clustering algorithms
+    that are often orders of magnitude faster than BLAST. 
+  no_src_dir: true
+  build:
+    modules: ""
+  install:
+     makeinstall: >
+      mkdir -p $(ROOT)/{{root}}/bin;
+      gunzip {{src_tarball}};
+      chmod +x {{distrofile}};
+      mv {{distrofile}} $(ROOT)/{{root}}/bin/{{name}}
+  requires: ""

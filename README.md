@@ -41,3 +41,8 @@ A collection of Genomics applications
    server/client with docker. 
 
 
+1. Usearch
+
+   Download page https://drive5.com/usearch/download.html
+   Check the md5sum signature of the downloaded file. 
+   Distro is precompiled 32bit binary in gzip format.

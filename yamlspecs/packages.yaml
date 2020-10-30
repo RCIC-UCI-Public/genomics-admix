@@ -80,6 +80,8 @@ build:
   - bionetgen-module
   - vcell
   - vcell-module
+  - usearch
+  - usearch-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
