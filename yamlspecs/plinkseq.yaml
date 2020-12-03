@@ -1,0 +1,28 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: plinkseq
+  name: plinkseq 
+  versions: !include versions.yaml
+  version: "{{versions.plinkseq}}"
+  src_dir: "{{name}}"
+  vendor_source: https://bitbucket.org/statgen/plinkseq.git
+  git_revision: d8b0d06c105d7ee803b1859ae9c159725f83a9e3
+  build_note: >
+    There is no vendor tarball for this software. It is revision of git repository.
+    The local tarball was created by cloning the repo, and then checking out revision
+    {{git_revision}}.
+
+  description: |
+    PLINK/SEQ is an open-source C/C++ library for working with human genetic variation data. 
+    The specific focus is to provide a platform for analytic tool development for variation data 
+    from large-scale resequencing projects, particularly whole-exome and whole-genome studies. 
+    However, the library could in principle be applied to other types of genetic studies, 
+    including whole-genome association studies of common SNPs.
+  build:
+    preconfigure: autoreconf -i
+    patchfile: "{{name}}-{{version}}.patch"
+    configure_args:  --with-protobuf=$$protobuf__PREFIX
+    modules: 
+      - protobuf/{{versions.protobuf}}
+    pkgmake: make -j 8

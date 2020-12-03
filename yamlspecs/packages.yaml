@@ -21,6 +21,7 @@ system:
   - libXt-devel
   - zlib-devel
   - ghostscript
+  - autoconf
 bootstrap:
   - click
   - llvmlite
@@ -44,6 +45,8 @@ bootstrap:
 build:
   - plink
   - plink-module
+  - plinkseq
+  - plinkseq-module
   - rMATS
   - rMATS-module
   - canu
