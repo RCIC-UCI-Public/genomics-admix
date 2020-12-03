@@ -5,7 +5,9 @@
 - package: plinkseq Module
   category: GENOMICS
   module:
+    prereq:
+      - protobuf/{{versions.protobuf}}
     requires:
       - *Requires
-      - "{{build.modules}}"
+      - "{{module.prereq}}"
 
