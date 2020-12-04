@@ -1,0 +1,26 @@
+!include plinkseq.yaml
+---
+- package: plinkseq
+  version: "{{versions.plinkseq_latest}}"
+  vendor_source: https://bitbucket.org/statgen/plinkseq.git
+  git_revision: 5d071291075ccbc4798b087b759e7455cfb4a825
+  build_note: >
+    There is no vendor tarball for this software. It is revision of git repository.
+    The local tarball was created by cloning the repo, and then checking out revision
+    {{git_revision}}.
+  build:
+    preconfigure: echo no preconfigure 
+    patchfile: "{{name}}-{{version}}.patch"
+    modules: ""
+    configure: echo no configure
+    configure_args:
+    pkgmake: make -j 8
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}}/bin;
+      cd build/execs;
+      for x in $$(find . -type f -not -name '*o' -not -name '*.dep'); do
+      install -m755 $$x $(ROOT){{root}}/bin; done;
+      cd ../../scripts;
+      mkdir -p $(ROOT){{root}}/scripts;
+      install -m755 * $(ROOT){{root}}/scripts

@@ -47,6 +47,8 @@ build:
   - plink-module
   - plinkseq
   - plinkseq-module
+  - plinkseq-latest
+  - plinkseq-latest-module
   - rMATS
   - rMATS-module
   - canu

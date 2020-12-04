@@ -1,0 +1,15 @@
+diff --git a/configure.ac b/configure.ac
+index 1ab86df..5fea78b 100755
+--- a/configure.ac
++++ b/configure.ac
+@@ -9,7 +9,9 @@ AC_PREREQ(2.61)
+ AC_INIT([plinkseq], [0.08], [bthomas@atgu.mgh.harvard.edu])
+ 
+ # foreign allows automake to run without the AUTHORS, COPYING, etc. files
+-AM_INIT_AUTOMAKE([-Wall -Werror foreign])
++#AM_INIT_AUTOMAKE([-Wall -Werror foreign])
++AM_INIT_AUTOMAKE([foreign])
++AM_PROG_AR
+ 
+ LT_PREREQ([2.2])
+ LT_INIT([pic-only disable-static])
