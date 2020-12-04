@@ -51,6 +51,8 @@ build:
   - plinkseq-latest-module
   - rMATS
   - rMATS-module
+  - rMATS-latest
+  - rMATS-latest-module
   - canu
   - canu-module
   - flye

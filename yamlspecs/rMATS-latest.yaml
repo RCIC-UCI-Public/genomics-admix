@@ -1,0 +1,41 @@
+!include common.yaml
+---
+- package: rMATS turbo
+  name: rMATS
+  version: "4.1.0"
+  vendor_source: https://github.com/Xinglab/rmats-turbo/archive/v{{version}}.{{extension}}
+  description: |
+    rMATS turbo {{version}} is the C/Cython version of rMATS (http://rnaseq-mats.sourceforge.net). 
+    The major difference between rMATS turbo and rMATS is speed and space usage. rMATS turbo is 
+    100 times faster and the output file is 1000 times smaller than rMATS. These advantages make
+    analysis and storage of a large scale dataset easy and convenient
+  src_dir: "rmats-turbo-{{version}}"
+  build:
+    configure: "echo no configure required"
+    configure_args: ""
+    pkgmake: >
+      sed -i "s/main /\#main /" setup_environment.sh;
+      ./build_rmats --no-paired-model
+    base_modules: 
+      - python/{{versions.python3}}
+      - samtools/{{versions.samtools}}
+      - star/{{versions.star}}
+      - gsl/{{versions.gsl}}/{{compiler}}.{{compiler_version}}
+    modules: 
+      - "{{compiler}}/{{compiler_version}}"
+      - foundation
+      - "{{build.base_modules}}"
+  extras: LICENSE README*
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/rMATS_C;
+       $(INSTALL) -m 755 rMATS_C/rMATSexe $(ROOT){{root}}/rMATS_C;
+       cp -p -r rMATS_P $(ROOT){{root}};
+       $(INSTALL) rmats*so* $(ROOT){{root}};
+       $(INSTALL) -m 755 rmats.py $(ROOT){{root}}
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - python_{{versions.python3}}-cython
+    - python_{{versions.python3}}-numpy
+    - samtools_{{versions.samtools}}
+    - star_{{versions.star}}
