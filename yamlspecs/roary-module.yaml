@@ -4,10 +4,12 @@
 ---
 - package: roary module
   category: GENOMICS
-  release: 2
+  release: 3
   module:
     setenv: ""
-    prepend_path: ""
+    prepend_path:
+      - PATH {{root}}/bin 
+      - PERL5LIB {{root}}/lib
     prereq: 
       - perl/{{versions.perl}}
       - ncbi-blast/{{versions.ncbi_blast}}
