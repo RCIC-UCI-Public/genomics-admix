@@ -1,0 +1,8 @@
+# Builds module for viennarna
+!include viennarna.yaml
+!include rcic-module.yaml
+---
+- package: viennarna module
+  category: GENOMICS
+  module:
+    <<: *ModuleCompiler

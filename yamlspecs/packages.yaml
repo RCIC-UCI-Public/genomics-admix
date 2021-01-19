@@ -89,6 +89,8 @@ build:
   - vcell-module
   - usearch
   - usearch-module
+  - viennarna
+  - viennarna-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
