@@ -91,6 +91,8 @@ build:
   - usearch-module
   - viennarna
   - viennarna-module
+  - fastqtl
+  - fastqtl-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

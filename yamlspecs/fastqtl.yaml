@@ -1,0 +1,25 @@
+!include common.yaml
+---
+- package: FastQTL 
+  name: fastqtl 
+  version: "{{versions.fastqtl}}"
+  extension: tgz
+  vendor_source: http://fastqtl.sourceforge.net/files/FastQTL-{{version}}.linux.{{extension}}
+  description: |
+    FastQTL {{version}} implements a popular cis-QTL mapping strategy in order to
+    discover quantitative trait loci (QTLs). See http://fastqtl.sourceforge.net
+  src_dir: "{{package}}"
+  build:
+    modules: 
+      - R/{{versions.R}}
+    pkgmake: >
+      sed -i 's/INC_MATH=.*/INC_MATH=$$(R__CPPFLAGS)/' Makefile;
+      sed -i 's%LIB_MATH=.*%LIB_MATH=$$(R__PREFIX)/lib64/libRmath.a%' Makefile;
+      make cleanall;
+      make -j 8
+  extras: LICENCE README
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       $(INSTALL) -m 755 bin/fastQTL $(ROOT){{root}}/bin;
+       cp -p -r example script $(ROOT){{root}}
