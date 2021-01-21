@@ -1,0 +1,29 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: pratt 
+  name: pratt 
+  versions: !include versions.yaml
+  version: "{{versions.pratt}}"
+  extension: tar
+  vendor_source: ftp://ftp.ebi.ac.uk/pub/software/unix/pratt/Pratt{{version}}.{{extension}}
+  description: |
+    Pratt {{version}} is a tool that allows the user to search
+    for patterns conserved in a set of protein sequences
+  no_src_dir: True
+  bdir: builddir
+  build:
+    configure: echo configure not used 
+    pkgmake: >
+      mkdir {{bdir}}; 
+      cd {{bdir}}; 
+      tar xvf $(REDHAT.ROOT)/sources/{{src_tarball}};
+      make
+    modules: ""
+    target:  
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT)/{{root}}/bin;
+      $(INSTALL) -m755 {{bdir}}/{{name}} $(ROOT){{root}}/bin;
+      $(INSTALL) -m644 {{bdir}}/Pratt2.doc $(ROOT){{root}}/README;
+      $(INSTALL) -m644 {{bdir}}/Pratt.set* $(ROOT){{root}}

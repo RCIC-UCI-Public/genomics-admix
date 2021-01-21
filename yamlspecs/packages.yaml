@@ -93,6 +93,8 @@ build:
   - viennarna-module
   - fastqtl
   - fastqtl-module
+  - pratt
+  - pratt-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
