@@ -95,6 +95,8 @@ build:
   - fastqtl-module
   - pratt
   - pratt-module
+  - bbmap
+  - bbmap-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

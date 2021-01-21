@@ -1,0 +1,17 @@
+# Builds the module for bbmap.
+!include bbmap.yaml
+!include rcic-module.yaml
+---
+- package: bbmap Module
+  category: GENOMICS
+  module:
+    setenv: 
+      - BBMAP_HOME {{root}}
+    prepend_path:
+      - PATH {{root}}
+      - CLASSPATH {{root}}/current
+    prereq: 
+      - java/{{versions.java.version}}
+    requires:
+      - *Requires
+      - "{{module.prereq}}"

@@ -1,0 +1,35 @@
+!include common.yaml
+---
+- package: BBMap
+  name: bbmap 
+  version: "{{versions.bbmap}}"
+  src_dir: "{{name}}"
+  vendor_source: https://sourceforge.net/projects/bbmap/files/BBMap_{{version}}.{{extension}}
+  description: |
+    BBMap {{version}} is a short read aligner for DNA and RNA-seq data.
+    Capable of handling arbitrarily large genomes with millions of
+    scaffolds. Handles Illumina, PacBio, 454, and other reads; very
+    high sensitivity and tolerant of errors and numerous large indels.
+    See https://sourceforge.net/projects/bbmap
+  build:
+    modules: 
+      - java/{{versions.java.version}}
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/jni;
+       chmod -R 755 . ;
+       cd jni; rm -rf *.o *.so ; make -f makefile.linux;
+       $(INSTALL) -m 755 libbbtoolsjni.so $(ROOT){{root}}/jni;
+       $(INSTALL) -m 644 README.txt $(ROOT){{root}}/jni;
+       cd ..;
+       chmod 644 config/*;
+       chmod 644 current/*/*.class current/*/*.java;
+       chmod 644 docs/*.txt docs/guides/*.txt;
+       chmod 644 pipelines/*/*.txt;
+       chmod 644 pytools/ReasMe pytools/css/* pytools/filter*/* pytools/images/* pytools/template/*;
+       chmod 644 resources/*;
+       cp -p -r config current docs pipelines pytools resources *.sh $(ROOT){{root}};
+       $(INSTALL) -m 644 bitbucket-pipelines.yml build.xml license.txt README.md $(ROOT){{root}}
+  requires:
+    - jre = {{versions.java.version}} 
+  rpmJarRepack: 0
