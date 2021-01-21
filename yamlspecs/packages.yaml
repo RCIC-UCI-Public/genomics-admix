@@ -97,6 +97,8 @@ build:
   - pratt-module
   - bbmap
   - bbmap-module
+  - megahit
+  - megahit-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
