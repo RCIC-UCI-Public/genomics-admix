@@ -46,6 +46,8 @@ mcl:
 prank: "170427"
 mafft: "7.471"
 fasttree: "2.1.11"
+bedtools: "2.29.2"
+parallel: "20200222"
 roary: "3.13.0"
 #arcasHLA: "0.2.0"
 bionetgen: "2.5.1"

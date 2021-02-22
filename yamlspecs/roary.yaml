@@ -4,6 +4,7 @@
   name: roary
   versions: !include versions.yaml
   version: "{{versions.roary}}"
+  release: 2
   vendor_source: https://github.com/sanger-pathogens/Roary/archive/v{{version}}.{{extension}}
   description: |
     Roary {{version}} takes annotated assemblies in GFF3 format and calculates the pan genome.
@@ -19,7 +20,6 @@
        cp -p -r lib $(ROOT){{root}};
        $(INSTALL) -m 644 GPL-LICENSE $(ROOT){{root}}
   rpmFilters: *filterRequiresProvides
-
   requires:
     - ncbi-blast_{{versions.ncbi_blast}}
     - cdhit_{{versions.cdhit}}
@@ -27,3 +27,5 @@
     - mcl_{{versions.mcl.version}}
     - mafft_{{versions.mafft}}
     - prank_{{versions.prank}}
+    - bedtools_{{versions.bedtools}}
+    - parallel_{{versions.parallel}}

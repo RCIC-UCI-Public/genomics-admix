@@ -4,7 +4,7 @@
 ---
 - package: roary module
   category: GENOMICS
-  release: 3
+  release: 4
   module:
     setenv: ""
     prepend_path:
@@ -18,6 +18,8 @@
       - mcl/{{versions.mcl.version}}
       - mafft/{{versions.mafft}}
       - prank/{{versions.prank}}
+      - bedtools/{{versions.bedtools}}
+      - parallel/{{versions.parallel}}
     requires:
       - *Requires
       - "{{module.prereq}}"
