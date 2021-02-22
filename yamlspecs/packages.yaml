@@ -99,6 +99,8 @@ build:
   - bbmap-module
   - megahit
   - megahit-module
+  - kraken2
+  - kraken2-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

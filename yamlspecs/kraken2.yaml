@@ -1,0 +1,29 @@
+!include common.yaml
+---
+- package: Kraken2
+  name: kraken2
+  version: "{{versions.kraken2}}"
+  vendor_source: https://github.com/DerrickWood/kraken2/archive/v{{version}}.{{extension}}
+  description: |
+   Kraken2 {{version}} is the second version of the Kraken taxonomic
+   sequence classification system that assigns taxonomic labels
+   to DNA sequences. Kraken examines the k-mers within a query
+   sequence and uses the information within those k-mers to
+   query a database. Please see the Operating Manual for usage
+   details https://github.com/DerrickWood/kraken2/wiki/Manual
+  build:
+    modules:
+      - "{{compiler}}/{{compiler_version}}"
+    pkgmake: cd src; make
+  binaries: build_db classify dump_table estimate_capacity lookup_accession_numbers
+  extras: CHANGELOG.md LICENSE
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       (cd src; $(INSTALL) -m 755 {{binaries}} $(ROOT){{root}}/bin);
+       sed -i 's%\#\#\#\#\#=KRAKEN2_DIR=\#\#\#\#\#%{{root}}/bin%' scripts/kraken*;
+       sed -i 's/\#\#\#\#\#=VERSION=\#\#\#\#\#/{{version}}/' scripts/kraken*;
+       $(INSTALL) scripts/* $(ROOT){{root}}/bin;
+       cp -r data $(ROOT){{root}}
+  requires:
+    - "{{compiler}}_{{compiler_version}}"

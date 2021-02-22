@@ -1,0 +1,15 @@
+# Builds the module for kraken2.
+!include kraken2.yaml
+!include rcic-module.yaml
+---
+- package: kraken2 Module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path:
+      - PATH {{root}}/bin
+    prereq:
+      - *ModuleCompiler_prereq
+    requires:
+      - *Requires
+      - "{{module.prereq}}"
