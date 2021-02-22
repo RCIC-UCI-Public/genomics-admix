@@ -18,7 +18,7 @@
       - mcl/{{versions.mcl.version}}
       - mafft/{{versions.mafft}}
       - prank/{{versions.prank}}
-      - bedtools/{{versions.bedtools}}
+      - bedtools2/{{versions.bedtools}}
       - parallel/{{versions.parallel}}
     requires:
       - *Requires

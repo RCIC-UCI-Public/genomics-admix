@@ -27,5 +27,5 @@
     - mcl_{{versions.mcl.version}}
     - mafft_{{versions.mafft}}
     - prank_{{versions.prank}}
-    - bedtools_{{versions.bedtools}}
+    - bedtools2_{{versions.bedtools}}
     - parallel_{{versions.parallel}}
