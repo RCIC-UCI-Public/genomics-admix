@@ -1,0 +1,25 @@
+!include common.yaml
+---
+- package: Bracken
+  name: bracken
+  version: "{{versions.bracken}}"
+  vendor_source: https://github.com/jenniferlu717/Bracken/archive/v{{version}}.{{extension}}
+  src_dir: "{{package}}-{{version}}"
+  description: |
+   Bracken (Bayesian Reestimation of Abundance with KrakEN) {{version}}
+   is a highly accurate statistical method that computes the abundance
+   of species in DNA sequences from a metagenomics sample.
+   See https://github.com/jenniferlu717/Bracken for details
+  build:
+    modules:
+      - "{{compiler}}/{{compiler_version}}"
+    pkgmake: cd src; make
+  binaries: src/kmer2read_distr bracken bracken-build analysis_scripts/combine_bracken_outputs.py
+  extras: CHANGELOG.md LICENSE
+  install:
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin;
+       $(INSTALL) {{binaries}} src/*.py $(ROOT){{root}}/bin;
+       cp -r sample_data $(ROOT){{root}}
+  requires:
+    - "{{compiler}}_{{compiler_version}}"

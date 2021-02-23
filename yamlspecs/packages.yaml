@@ -101,6 +101,8 @@ build:
   - megahit-module
   - kraken2
   - kraken2-module
+  - bracken
+  - bracken-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
