@@ -1,9 +1,7 @@
-!include rcic-package.yaml 
-!include rpm.yaml
+!include common.yaml
 ---
 - package:  scHLAcount 
   name: scHLAcount
-  versions: !include versions.yaml
   version: "{{versions.scHLAcount.version}}"
   hash: "{{versions.scHLAcount.hash}}"
   src_dir: "{{name}}-{{hash}}"
@@ -19,9 +17,10 @@
     calls.  
   build:
     modules: rustc/{{versions.rustc}}
-    configure: echo built with cargo install 
-    pkgmake: echo built with cargo install 
   install:
      makeinstall: >
        export CARGO_HOME=$$(pwd);
        cargo install --locked --root=$(ROOT){{root}}
+  requires:
+    - "{{compiler}}_{{compiler_version}}"
+    - rustc_{{versions.rustc}}
