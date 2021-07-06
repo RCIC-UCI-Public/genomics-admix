@@ -1,0 +1,16 @@
+!include hisat-genotype.yaml
+!include rcic-module.yaml
+---
+- package: hisat-genotype module
+  category: GENOMICS
+  module:
+    setenv: ""
+    prepend_path:
+      - PATH {{root}}
+      - PYTHONPATH {{root}}/hisatgenotype_modules
+    prereq: 
+      - python/{{versions.python3}}
+      - hisat2/{{versions.hisat2}}
+    requires:
+      - *Requires
+      - "{{module.prereq}}"

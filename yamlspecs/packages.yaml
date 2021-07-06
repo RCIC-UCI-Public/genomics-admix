@@ -103,6 +103,8 @@ build:
   - kraken2-module
   - bracken
   - bracken-module
+  - hisat-genotype
+  - hisat-genotype-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"

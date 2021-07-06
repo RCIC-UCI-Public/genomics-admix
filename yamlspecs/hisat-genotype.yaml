@@ -1,0 +1,24 @@
+!include common.yaml
+---
+- package: hisat-genotype 
+  name: hisat-genotype
+  version: "{{versions.hisat_genotype}}"
+  vendor_source: https://github.com/DaehwanKimLab/hisat-genotype/archive/refs/tags/v{{version}}.{{extension}}
+  src_dir: hisat-genotype-{{version}}
+  description: |
+    HISAT-genotype {{version}} is a genomic analysis software for assembling
+    and genotyping human genes and genomic regions. The software leverages
+    HISAT2s graph FM index and graph alignemnt algorithm to align reads to
+    a specially constructed graph genome. Please see the official website
+    https://daehwankimlab.github.io/hisat-genotype/
+  build:
+    modules: 
+  extras: AUTHORS LICENSE README*
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}}/devel;
+      $(INSTALL) -m 644  devel/settings.json $(ROOT){{root}}/devel;
+      $(INSTALL) -m 755 hisatgenotype hisatgenotype_toolkit $(ROOT){{root}};
+      cp -p -r hisatgenotype_modules hisatgenotype_tools  $(ROOT){{root}}
+#  requires:
+#    - "python_{{versions.python3}}"
