@@ -1,4 +1,3 @@
-# Builds the module for pratt.
 !include pratt.yaml
 !include rcic-module.yaml
 ---

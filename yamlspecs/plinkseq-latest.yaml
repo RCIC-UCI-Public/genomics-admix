@@ -14,7 +14,6 @@
     modules: ""
     configure: echo no configure
     configure_args:
-    pkgmake: make -j 8
   install:
     makeinstall: >
       mkdir -p $(ROOT){{root}}/bin;

@@ -11,10 +11,12 @@
     human genomes as well as to a single reference genome. 
     See https://daehwankimlab.github.io/hisat2/
   build:
-    modules: 
+    base_modules: 
       - "{{compiler}}/{{compiler_version}}"
+    modules: 
       - ncbi-ngs/{{versions.ncbi_ngs}}
       - ncbi-vdb/{{versions.ncbi_vdb}}
+      - "{{build.base_modules}}"
     pkgmake: >
       sed -i -e "s/(SEARCH_INC)/(SEARCH_INC) /" Makefile;
       make USE_SRA=1 NCBI_NGS_DIR=$$NGS_HOME NCBI_VDB_DIR=$$VDB_HOME allall ht2lib

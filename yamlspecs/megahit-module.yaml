@@ -1,10 +1,11 @@
-# Builds the module for megahit.
 !include megahit.yaml
 !include rcic-module.yaml
 ---
-- package: megahit Module
+- package: megahit module
   category: GENOMICS
   module:
     setenv: ""
     prepend_path:
       - PATH {{root}}/bin
+    prereq:
+      - "{{build.base_modules}}"

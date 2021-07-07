@@ -1,4 +1,3 @@
-# Builds the module for plink.
 !include plink.yaml
 !include rcic-module.yaml
 ---
@@ -9,9 +8,3 @@
     setenv: ""
     prepend_path:
       - PATH {{root}}/bin
-    prereq:
-      - *ModuleCompiler_prereq
-      - mkl/{{versions.mkl}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"

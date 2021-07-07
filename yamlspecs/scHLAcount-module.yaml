@@ -1,8 +1,7 @@
-# Builds module for scHLAcount
 !include scHLAcount.yaml
 !include rcic-module.yaml
 ---
-- package: scHLAcount Module
+- package: scHLAcount module
   category: GENOMICS
   release: 2
   module:

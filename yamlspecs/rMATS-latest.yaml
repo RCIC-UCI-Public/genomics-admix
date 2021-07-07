@@ -11,8 +11,6 @@
     analysis and storage of a large scale dataset easy and convenient
   src_dir: "rmats-turbo-{{version}}"
   build:
-    configure: "echo no configure required"
-    configure_args: ""
     pkgmake: >
       sed -i "s/main /\#main /" setup_environment.sh;
       ./build_rmats --no-paired-model

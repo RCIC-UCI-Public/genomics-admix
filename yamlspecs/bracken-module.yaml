@@ -1,16 +1,12 @@
-# Builds the module for bracken.
 !include bracken.yaml
 !include rcic-module.yaml
 ---
-- package: bracken Module
+- package: bracken module
   category: GENOMICS
   module:
     setenv: ""
     prepend_path:
       - PATH {{root}}/bin
     prereq:
-      - *ModuleCompiler_prereq
+      - "{{build.modules}}"
       - kraken2/{{versions.kraken2}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"

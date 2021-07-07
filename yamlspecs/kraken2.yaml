@@ -25,5 +25,3 @@
        sed -i 's/\#\#\#\#\#=VERSION=\#\#\#\#\#/{{version}}/' scripts/kraken*;
        $(INSTALL) scripts/* $(ROOT){{root}}/bin;
        cp -r data $(ROOT){{root}}
-  requires:
-    - "{{compiler}}_{{compiler_version}}"

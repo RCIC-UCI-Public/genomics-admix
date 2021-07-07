@@ -1,12 +1,8 @@
-!include rcic-package.yaml
-!include rpm.yaml
+!include common.yaml
 ---
 - package: BioNetGen
   name: bionetgen
-  versions: !include versions.yaml
   version: "{{versions.bionetgen}}"
-  compiler: gcc
-  compiler_version: "{{versions.gcc}}"
   vendor_source: http://github.com/RuleWorld/bionetgen/archive/{{package}}-{{version}}.{{extension}}
   src_dir: "{{name}}-{{package}}-{{version}}"
   description: |
@@ -17,12 +13,12 @@
   addfile: 
     - filter-requires-{{name}}.sh
   build:
-    configure: "echo no configure"
-    configure_args: ""
-    modules:
+    base_modules:
       - "{{compiler}}/{{compiler_version}}"
+    modules:
       - foundation
       - python/{{versions.python3}}
+      - "{{build.base_modules}}"
     pkgmake: >
       echo "{{versions.perl}}" > ../PERLVERSION;
       cd bng2;
@@ -39,6 +35,4 @@
       cd bng2;
       rm -rf {{package}}-{{version}}/Network3;
       mv {{package}}-{{version}}/* $(ROOT){{root}} 
-  requires:
-    - "{{compiler}}_{{compiler_version}}"
   rpmFilters: *filterRequires

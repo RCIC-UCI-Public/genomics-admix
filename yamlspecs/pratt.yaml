@@ -13,14 +13,12 @@
   no_src_dir: True
   bdir: builddir
   build:
-    configure: echo configure not used 
     pkgmake: >
       mkdir {{bdir}}; 
       cd {{bdir}}; 
       tar xvf $(REDHAT.ROOT)/sources/{{src_tarball}};
       make
     modules: ""
-    target:  
   install:
     makeinstall: >
       mkdir -p $(ROOT)/{{root}}/bin;

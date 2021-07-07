@@ -12,7 +12,6 @@
   build:
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-    pkgmake: make
   extras: LICENSE README.md
   install:
      makeinstall: >

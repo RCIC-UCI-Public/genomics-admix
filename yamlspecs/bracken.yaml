@@ -11,8 +11,6 @@
    of species in DNA sequences from a metagenomics sample.
    See https://github.com/jenniferlu717/Bracken for details
   build:
-    modules:
-      - "{{compiler}}/{{compiler_version}}"
     pkgmake: cd src; make
   binaries: src/kmer2read_distr bracken bracken-build analysis_scripts/combine_bracken_outputs.py
   extras: CHANGELOG.md LICENSE
@@ -21,5 +19,3 @@
        mkdir -p $(ROOT){{root}}/bin;
        $(INSTALL) {{binaries}} src/*.py $(ROOT){{root}}/bin;
        cp -r sample_data $(ROOT){{root}}
-  requires:
-    - "{{compiler}}_{{compiler_version}}"

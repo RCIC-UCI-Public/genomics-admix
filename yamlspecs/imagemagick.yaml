@@ -1,13 +1,9 @@
-!include rcic-package.yaml
-!include rpm.yaml
+!include common.yaml
 ---
 - package: ImageMagick
   name: imagemagick
-  versions: !include versions.yaml
   version: "{{versions.imagemagick.version}}"
   versionRev: "{{versions.imagemagick.versionRev}}"
-  compiler: gcc
-  compiler_version: "{{versions.gcc}}"
   vendor_source: https://github.com/ImageMagick/ImageMagick/archive/{{versionRev}}.{{extension}}
   description: |
     Use ImageMagic {{versionRev}} to create, edit, compose, or convert bitmap images.
@@ -21,9 +17,11 @@
   build:
     configure: ./configure
     configure_args: --prefix={{root}} --enable-shared --with-perl --with-modules
-    modules:
+    base_modules:
       - "{{compiler}}/{{compiler_version}}"
+    modules:
       - perl/{{versions.perl}}
+      - "{{build.base_modules}}"
     pkgmake: make
   install:
      makeinstall: >

@@ -15,10 +15,11 @@
   build:
     configure: ./configure
     configure_args: --prefix={{root}}
+    base_modules:
+      - "{{compiler}}/{{compiler_version}}"
     modules:
       - foundation
-      - "{{compiler}}/{{compiler_version}}"
-    pkgmake: make
+      - "{{build.base_modules}}"
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}};

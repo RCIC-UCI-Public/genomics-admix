@@ -1,4 +1,3 @@
-# Builds the module for bbmap.
 !include bbmap.yaml
 !include rcic-module.yaml
 ---
@@ -10,8 +9,3 @@
     prepend_path:
       - PATH {{root}}
       - CLASSPATH {{root}}/current
-    prereq: 
-      - java/{{versions.java.version}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"

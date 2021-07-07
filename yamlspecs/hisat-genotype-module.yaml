@@ -11,6 +11,3 @@
     prereq: 
       - python/{{versions.python3}}
       - hisat2/{{versions.hisat2}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"

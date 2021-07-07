@@ -15,9 +15,11 @@
     configure_args: -DCMAKE_INSTALL_PREFIX={{root}} -DCMAKE_BUILD_TYPE=Release ..
     pkgmake: > 
       cd {{builddir}}; make -j 8 
-    modules: 
+    base_modules: 
       - "{{compiler}}/{{compiler_version}}"
+    modules: 
       - foundation
+      - "{{build.base_modules}}"
   extras: LICENSE README*
   install:
     makeinstall: >

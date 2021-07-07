@@ -12,7 +12,6 @@
     There is no vendor tarball for this software. It is revision of git repository.
     The local tarball was created by cloning the repo, and then checking out revision
     {{git_revision}}.
-
   description: |
     PLINK/SEQ is an open-source C/C++ library for working with human genetic variation data. 
     The specific focus is to provide a platform for analytic tool development for variation data 
@@ -20,6 +19,7 @@
     However, the library could in principle be applied to other types of genetic studies, 
     including whole-genome association studies of common SNPs.
   build:
+    confikgure: ./configure
     preconfigure: autoreconf -i
     patchfile: "{{name}}-{{version}}.patch"
     configure_args:  --with-protobuf=$$protobuf__PREFIX

@@ -1,4 +1,3 @@
-# Builds the module for velocyto.
 !include velocyto.yaml
 !include rcic-module.yaml
 ---
@@ -9,9 +8,5 @@
     setenv: ""
     prepend_path: ""
     prereq: 
-      - *ModuleCompiler_prereq
-      - python/{{versions.python3}}
+      - "{{build.modules}}"
       - llvm/{{versions.llvm}}
-    requires:
-      - *ModuleCompiler_requires
-      - "{{module.prereq}}"

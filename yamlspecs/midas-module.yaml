@@ -1,4 +1,3 @@
-# Builds the module for midas.
 !include midas.yaml
 !include rcic-module.yaml
 ---
@@ -9,9 +8,4 @@
     setenv: 
       - MIDAS_HOME {{pkg_defaults.app_path}}/python/{{versions.python3}}/bin
     prepend_path: ""
-    prereq: 
-      - python/{{versions.python3}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"
 

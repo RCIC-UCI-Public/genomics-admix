@@ -1,8 +1,7 @@
-# Builds module for bedops
 !include bedops.yaml
 !include rcic-module.yaml
 ---
-- package: bedops Module
+- package: bedops module
   category: GENOMICS
   module:
     setenv: ""

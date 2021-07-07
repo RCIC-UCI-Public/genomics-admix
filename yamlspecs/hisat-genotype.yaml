@@ -20,5 +20,5 @@
       $(INSTALL) -m 644  devel/settings.json $(ROOT){{root}}/devel;
       $(INSTALL) -m 755 hisatgenotype hisatgenotype_toolkit $(ROOT){{root}};
       cp -p -r hisatgenotype_modules hisatgenotype_tools  $(ROOT){{root}}
-#  requires:
-#    - "python_{{versions.python3}}"
+  requires:
+    - "python_{{versions.python3}}"

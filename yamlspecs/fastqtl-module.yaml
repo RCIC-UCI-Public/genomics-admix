@@ -1,4 +1,3 @@
-# Builds the module for fastqtl.
 !include fastqtl.yaml
 !include rcic-module.yaml
 ---

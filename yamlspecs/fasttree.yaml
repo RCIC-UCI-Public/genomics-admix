@@ -2,10 +2,7 @@
 ---
 - package: FastTree
   name: fasttree
-  versions: !include versions.yaml
   version: "{{versions.fasttree}}"
-  compiler: gcc
-  compiler_version: "{{versions.gcc}}"
   extension: c
   vendor_source: http://www.microbesonline.org/fasttree/{{package}}-{{version}}.{{extension}}
   description: |
@@ -23,5 +20,3 @@
        mkdir -p $(ROOT){{root}}/bin;
        $(INSTALL) -m 755 {{package}} $(ROOT){{root}}/bin;
        $(INSTALL) -m 755 {{package}}MP $(ROOT){{root}}/bin
-  requires:
-    - "{{compiler}}_{{compiler_version}}"

@@ -5,13 +5,8 @@
   compiler: gcc
   compiler_version: "{{versions.gcc}}"
   build:
-    configure: echo
-    configure_args: ""
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-    pkgmake:
-    target: 
-  extras:
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}};

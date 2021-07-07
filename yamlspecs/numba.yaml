@@ -16,9 +16,11 @@
     pkgmake: >
       export CXXFLAGS=-fPIC;
       python setup.py build
-    modules: 
+    base_modules: 
       - "{{compiler}}/{{compiler_version}}"
       - python/{{versions.python3}}
+    modules: 
+      - "{{build.base_modules}}"
       - llvm/{{versions.llvm}}
   install:
     makeinstall: >

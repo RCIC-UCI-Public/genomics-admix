@@ -1,4 +1,3 @@
-# Builds module for stringtie
 !include stringtie.yaml
 !include rcic-module.yaml
 ---

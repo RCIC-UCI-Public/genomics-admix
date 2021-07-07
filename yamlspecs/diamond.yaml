@@ -1,9 +1,7 @@
-!include rcic-package.yaml
-!include rpm.yaml
+!include common.yaml
 ---
 - package: diamond
   name: diamond 
-  versions: !include versions.yaml
   version: "{{versions.diamond}}"
   vendor_source: https://github.com/bbuchfink/{{name}}/archive/v{{version}}.{{extension}}
   description: |
@@ -13,21 +11,18 @@
     o Frameshift alignments for long read analysis.
     o Low resource requirements and suitable for running on standard desktops or laptops.
     o Various output formats, including BLAST pairwise, tabular and XML, as well as taxonomic classification. 
-
   builddir: build
-  compiler: gcc
-  compiler_version: "{{versions.gcc}}"
   build:
     preconfigure: mkdir {{builddir}}
     configure: cd {{builddir}}; cmake 
     configure_args: -DCMAKE_INSTALL_PREFIX={{root}} -DCMAKE_BUILD_MARCH=haswell ..
     pkgmake: > 
       cd {{builddir}}; make -j 8 
-    modules: 
+    base_modules: 
       - "{{compiler}}/{{compiler_version}}"
+    modules: 
       - foundation
+      - "{{build.base_modules}}"
   install:
     makeinstall: >
       cd {{ builddir }}; make DESTDIR=$(ROOT) install
-  requires:
-    - "{{compiler}}_{{compiler_version}}"

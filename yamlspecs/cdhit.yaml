@@ -25,6 +25,4 @@
        mkdir -p $(ROOT){{root}}/bin;
        make install PREFIX=$(ROOT){{root}}/bin;
        for x in {{auxtools}}; do $(INSTALL) -m 755 cd-hit-auxtools/$$x $(ROOT){{root}}/bin; done
-  requires:
-    - "{{compiler}}_{{compiler_version}}"
   rpmFilters: *filterRequires

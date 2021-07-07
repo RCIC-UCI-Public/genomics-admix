@@ -1,4 +1,3 @@
-# Builds the module for numba.
 !include numba.yaml
 !include rcic-module.yaml
 ---
@@ -9,8 +8,4 @@
     setenv: ""
     prepend_path: ""
     prereq: 
-      - *ModuleCompiler_prereq
-      - python/{{versions.python3}}
-    requires:
-      - *ModuleCompiler_requires
-      - "{{module.prereq}}"
+      - "{{build.base_modules}}"

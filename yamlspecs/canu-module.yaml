@@ -1,8 +1,7 @@
-# Builds module for canu
 !include canu.yaml
 !include rcic-module.yaml
 ---
-- package: canu Module
+- package: canu module
   category: GENOMICS
   release: 2
   module:
@@ -12,6 +11,3 @@
     prereq:
       - java/{{versions.java.version}}
       - *ModuleCompiler_prereq
-    requires:
-      - *ModuleCompiler_requires
-      - "{{module.prereq}}"

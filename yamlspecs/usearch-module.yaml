@@ -1,4 +1,3 @@
-# Builds the module for usearch.
 !include usearch.yaml
 !include rcic-module.yaml
 ---

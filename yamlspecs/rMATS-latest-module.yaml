@@ -1,4 +1,3 @@
-# Builds module for rMATS
 !include rMATS-module.yaml
 ---
 - version: "{{versions.rMATS_latest}}"

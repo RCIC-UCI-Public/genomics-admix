@@ -1,4 +1,3 @@
-# Builds the module for bismark.
 !include bismark.yaml
 !include rcic-module.yaml
 ---
@@ -13,6 +12,3 @@
       - samtools/{{versions.samtools}}
       - bowtie2/{{versions.bowtie2}}
       - hisat2/{{versions.hisat2}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"

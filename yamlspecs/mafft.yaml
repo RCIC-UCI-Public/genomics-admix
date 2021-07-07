@@ -21,5 +21,3 @@
        mkdir -p $(ROOT){{root}}/share/man/man1;
        (cd core; make install DESTDIR=$(ROOT) PREFIX={{root}});
        (cd extension; make install DESTDIR=$(ROOT) PREFIX={{root}})
-  requires:
-    - "{{compiler}}_{{compiler_version}}"

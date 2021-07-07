@@ -1,4 +1,3 @@
-# Builds the module for plinkseq.
 !include plinkseq-latest.yaml
 !include rcic-module.yaml
 ---

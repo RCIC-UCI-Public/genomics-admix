@@ -1,13 +1,5 @@
-# Builds the module for plinkseq.
 !include plinkseq.yaml
 !include rcic-module.yaml
 ---
 - package: plinkseq Module
   category: GENOMICS
-  module:
-    prereq:
-      - protobuf/{{versions.protobuf}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"
-

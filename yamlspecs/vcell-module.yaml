@@ -1,4 +1,3 @@
-# Builds the module for vcell.
 !include vcell.yaml
 !include rcic-module.yaml
 ---

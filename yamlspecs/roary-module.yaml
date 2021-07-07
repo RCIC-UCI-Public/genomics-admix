@@ -1,4 +1,3 @@
-# Builds the module for roary.
 !include roary.yaml
 !include rcic-module.yaml
 ---
@@ -20,6 +19,3 @@
       - prank/{{versions.prank}}
       - bedtools2/{{versions.bedtools}}
       - parallel/{{versions.parallel}}
-    requires:
-      - *Requires
-      - "{{module.prereq}}"
