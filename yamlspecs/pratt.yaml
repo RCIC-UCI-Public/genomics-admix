@@ -18,7 +18,7 @@
       cd {{bdir}}; 
       tar xvf $(REDHAT.ROOT)/sources/{{src_tarball}};
       make
-    modules: ""
+    modules:
   install:
     makeinstall: >
       mkdir -p $(ROOT)/{{root}}/bin;

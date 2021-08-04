@@ -15,11 +15,11 @@
   addfile: 
     - filter-requires-{{name}}.sh
   build:
-    modules: ""
+    modules:
   install:
      makeinstall: >
       mkdir -p $(ROOT)/{{root}};
       mv * $(ROOT)/{{root}}
   rpmJarRepack: 0
   rpmFilters: *filterRequires
-  requires: ""
+  requires:

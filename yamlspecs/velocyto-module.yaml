@@ -5,8 +5,8 @@
   category: GENOMICS
   release: 2
   module:
-    setenv: ""
-    prepend_path: ""
+    setenv:
+    prepend_path:
     prereq: 
       - "{{build.modules}}"
       - llvm/{{versions.llvm}}

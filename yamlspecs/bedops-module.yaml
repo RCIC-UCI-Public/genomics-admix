@@ -4,6 +4,6 @@
 - package: bedops module
   category: GENOMICS
   module:
-    setenv: ""
+    setenv:
     prepend_path:
       - PATH {{root}}/bin

@@ -11,7 +11,7 @@
     This is a prebuild binary that contains a GUI client.
   no_src_dir: true
   build:
-    modules: ""
+    modules:
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}};

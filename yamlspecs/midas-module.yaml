@@ -7,5 +7,5 @@
   module:
     setenv: 
       - MIDAS_HOME {{pkg_defaults.app_path}}/python/{{versions.python3}}/bin
-    prepend_path: ""
+    prepend_path:
 

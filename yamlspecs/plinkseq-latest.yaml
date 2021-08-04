@@ -11,7 +11,7 @@
   build:
     preconfigure: echo no preconfigure 
     patchfile: "{{name}}-{{version}}.patch"
-    modules: ""
+    modules:
     configure: echo no configure
     configure_args:
   install:

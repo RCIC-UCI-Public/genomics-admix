@@ -4,7 +4,7 @@
 - package: vcell module
   category: GENOMICS
   module:
-    setenv: ""
+    setenv:
     alias:
       - vcell "{{root}}/VCell-Rel"
     prepend_path: 

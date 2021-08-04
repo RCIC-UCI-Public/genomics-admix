@@ -17,4 +17,4 @@
        mkdir -p $(ROOT){{root}}/bin;
        make install_all;
        cp bin/* $(ROOT){{root}}/bin
-  requires: ""
+  requires:

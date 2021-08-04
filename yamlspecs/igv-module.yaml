@@ -4,7 +4,7 @@
 - package: igv module
   category: GENOMICS
   module:
-    setenv: ""
+    setenv:
     alias:
       - igv "{{root}}/{{name}}.sh"
     prepend_path: 

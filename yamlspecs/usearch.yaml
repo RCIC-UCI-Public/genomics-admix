@@ -13,11 +13,11 @@
     that are often orders of magnitude faster than BLAST. 
   no_src_dir: true
   build:
-    modules: ""
+    modules:
   install:
      makeinstall: >
       mkdir -p $(ROOT)/{{root}}/bin;
       gunzip {{src_tarball}};
       chmod +x {{distrofile}};
       mv {{distrofile}} $(ROOT)/{{root}}/bin/{{name}}
-  requires: ""
+  requires:

@@ -11,7 +11,7 @@
   addfile: 
     - filter-requires-{{name}}.sh
   build:
-    modules: ""
+    modules:
   install:
      makeinstall: >
        echo "{{versions.perl}}" > ../PERLVERSION;

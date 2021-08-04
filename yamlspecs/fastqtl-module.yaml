@@ -4,6 +4,6 @@
 - package: fastqtl module
   category: GENOMICS
   module:
-    setenv: ""
+    setenv:
     prepend_path: 
       - PATH {{root}}/bin

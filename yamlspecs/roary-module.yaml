@@ -5,7 +5,7 @@
   category: GENOMICS
   release: 4
   module:
-    setenv: ""
+    setenv:
     prepend_path:
       - PATH {{root}}/bin 
       - PERL5LIB {{root}}/lib

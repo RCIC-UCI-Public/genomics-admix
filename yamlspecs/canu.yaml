@@ -10,7 +10,7 @@
   canuarch: "Linux-amd64"
   build:
     pkgmake: cd src; make -j 8
-    module: ""
+    module:
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}};
