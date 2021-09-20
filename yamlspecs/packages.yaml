@@ -19,9 +19,11 @@ system:
   - libX11-devel
   - libXext-devel
   - libXt-devel
-  - zlib-devel
   - ghostscript
   - autoconf
+  - glibc-static
+  - libstdc++-static
+  - zlib-static
 bootstrap:
   - click
   - llvmlite
