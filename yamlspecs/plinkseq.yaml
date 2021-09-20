@@ -19,7 +19,7 @@
     However, the library could in principle be applied to other types of genetic studies, 
     including whole-genome association studies of common SNPs.
   build:
-    confikgure: ./configure
+    configure: ./configure
     preconfigure: autoreconf -i
     patchfile: "{{name}}-{{version}}.patch"
     configure_args:  --with-protobuf=$$protobuf__PREFIX
