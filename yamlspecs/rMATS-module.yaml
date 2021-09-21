@@ -11,4 +11,5 @@
     alias: 
       - rMATS "python {{root}}/rmats.py"
     prereq: 
-      - python/{{versions.python}}
+      - "{{build.base_modules}}"
+      - "{{build.run_modules}}"

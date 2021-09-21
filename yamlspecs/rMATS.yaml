@@ -1,22 +1,54 @@
-!include common.yaml
+!include rcic-package.yaml
+!include rpm.yaml
 ---
-- package: rMATS 
+- package: rMATS turbo
   name: rMATS 
-  version: "{{versions.rMATS}}"
-  src_dir: "{{name}}.{{version}}"
-  turboversion: turbo-Linux-UCS4
-  extension: tgz
-  vendor_source: https://sourceforge.net/projects/rnaseq-mats/files/MATS/{{name}}.{{version}}.{{extension}}
+  versions: !include versions.yaml
+  version: "{{versions.rMATS.version}}"
+  tag: "{{versions.rMATS.tag}}"
+  extension: "{{versions.rMATS.extension}}"
+  # for building from binary distro
+  vendor_source_bin: https://sourceforge.net/projects/rnaseq-mats/files/MATS/{{name}}.{{version}}.{{extension}}
+  src_dir_bin: "{{name}}.{{version}}"
+  pkgmake_bin: echo
+  makeinstall_bin: >
+    mkdir -p $(ROOT){{root}}/;
+    cp -p -R {{name}}-turbo-Linux-UCS4/* $(ROOT){{root}}
+  # for building from src distro
+  vendor_source_src: https://github.com/Xinglab/rmats-turbo/archive/v{{version}}.{{extension}}
+  src_dir_src: "rmats-turbo-{{version}}"
+  pkgmake_src: >
+    sed -i "s/main /\#main /" setup_environment.sh;
+    ./build_rmats --no-paired-model
+  makeinstall_src: >
+    mkdir -p $(ROOT){{root}}/rMATS_C;
+    $(INSTALL) -m 755 rMATS_C/rMATSexe $(ROOT){{root}}/rMATS_C;
+    cp -p -r rMATS_P $(ROOT){{root}};
+    $(INSTALL) rmats*so* $(ROOT){{root}};
+    $(INSTALL) -m 755 rmats.py $(ROOT){{root}};
+    $(INSTALL) -m 644 LICENSE README*  $(ROOT){{root}}
+  # actual build and install
+  vendor_source: "{{vendor_source_{{tag}}}}"
+  src_dir: "{{src_dir_{{tag}}}}"
   description: |
-    rMATS {{version}} is a computational tool to detect differential alternative
-    splicing events from RNA-Seq data. The statistical model of MATS calculates
-    the P-value and false discovery rate that the difference in the isoform ratio
-    of a gene between two conditions exceeds a given user-defined threshold. 
-    See http://rnaseq-mats.sourceforge.net/index.html
+    rMATS turbo {{version}} is the C/Cython version of rMATS (http://rnaseq-mats.sourceforge.net).
+    The major difference between rMATS turbo and rMATS is speed and space usage. rMATS turbo is
+    100 times faster and the output file is 1000 times smaller than rMATS. These advantages make
+    analysis and storage of a large scale dataset easy and convenient
   build:
+    base_modules:
+      - python/{{versions.rMATS.python}}
+    run_modules:
+      - star/{{versions.star}}
+      - samtools/{{versions.samtools}}
     modules:
+      - "{{build.base_modules}}"
+      - foundation
+    pkgmake: "{{pkgmake_{{tag}}}}"
   install:
-     makeinstall: >
-       mkdir -p $(ROOT){{root}}/;
-       cp -p -R {{name}}-{{turboversion}}/* $(ROOT){{root}}
+     makeinstall: "{{makeinstall_{{tag}}}}"
   requires:
+    - python_{{versions.rMATS.python}}-cython
+    - python_{{versions.rMATS.python}}-numpy
+    - samtools_{{versions.samtools}}
+    - star_{{versions.star}}

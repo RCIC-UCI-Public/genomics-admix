@@ -1,0 +1,10 @@
+!include packages.yaml
+---
+versions: latest.versions.yaml
+build:
+  - plinkseq
+  - plinkseq-module
+  - rMATS
+  - rMATS-module
+manifest:
+  - "{{build}}"

@@ -4,25 +4,48 @@
 - package: plinkseq
   name: plinkseq 
   versions: !include versions.yaml
-  version: "{{versions.plinkseq}}"
+  version: "{{versions.plinkseq.version}}"
+  tag: "{{versions.plinkseq.build}}"
+  addmod: "{{versions.plinkseq.addmod}}"
   src_dir: "{{name}}"
   vendor_source: https://bitbucket.org/statgen/plinkseq.git
-  git_revision: d8b0d06c105d7ee803b1859ae9c159725f83a9e3
-  build_note: >
-    There is no vendor tarball for this software. It is revision of git repository.
-    The local tarball was created by cloning the repo, and then checking out revision
-    {{git_revision}}.
+  git_revision: "{{versions.plinkseq.git}}"
   description: |
-    PLINK/SEQ is an open-source C/C++ library for working with human genetic variation data. 
+    PLINK/SEQ {{version}} is an open-source C/C++ library for working with human genetic variation data. 
     The specific focus is to provide a platform for analytic tool development for variation data 
     from large-scale resequencing projects, particularly whole-exome and whole-genome studies. 
     However, the library could in principle be applied to other types of genetic studies, 
-    including whole-genome association studies of common SNPs.
+    including whole-genome association studies of common SNPs. There is no vendor tarball
+    for this software. It is revision of git repository. The local tarball was created by
+    cloning the repo, and checking out revision {{git_revision}}
+    (building from {{tag}} distribution)
+  # definitions for build from binary distro
+  preconfigure_bin: echo no preconfigure
+  configure_bin: echo no configure
+  configure_args_bin:
+  makeinstall_bin: >
+      mkdir -p $(ROOT){{root}}/bin;
+      cd build/execs;
+      for x in $$(find . -type f -not -name '*o' -not -name '*.dep'); do
+      install -m755 $$x $(ROOT){{root}}/bin; done;
+      cd ../../scripts;
+      mkdir -p $(ROOT){{root}}/scripts;
+      install -m755 * $(ROOT){{root}}/scripts
+  # definitions for build from source distro
+  preconfigure_src: autoreconf -i
+  configure_src: ./configure
+  configure_args_src:  --with-protobuf=$$protobuf__PREFIX
+  makeinstall_src: >
+       mkdir -p $(ROOT){{root}};
+       make prefix={{root}} DESTDIR=$(ROOT) install
+  # actual build and install
   build:
-    configure: ./configure
-    preconfigure: autoreconf -i
+    preconfigure: "{{preconfigure_{{tag}}}}"
+    configure: "{{configure_{{tag}}}}"
+    configure_args: --prefix={{root}} "{{configure_args_{{tag}}}}"
     patchfile: "{{name}}-{{version}}.patch"
-    configure_args:  --with-protobuf=$$protobuf__PREFIX
-    modules: 
-      - protobuf/{{versions.protobuf}}
+    modules:
+      - "{{addmod}}"
     pkgmake: make -j 8
+  install:
+    makeinstall: "{{makeinstall_{{tag}}}}"

@@ -1,6 +1,0 @@
-!include plinkseq-latest.yaml
-!include rcic-module.yaml
----
-- package: plinkseq Module
-  category: GENOMICS
-
