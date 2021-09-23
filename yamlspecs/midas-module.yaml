@@ -3,9 +3,11 @@
 ---
 - package: midas module
   category: GENOMICS
-  release: 2
   module:
     setenv: 
       - MIDAS_HOME {{pkg_defaults.app_path}}/python/{{versions.python3}}/bin
     prepend_path:
-
+    prereq: 
+      - "{{build.modules}}"
+      - bowtie2/{{versions.bowtie2}}
+      - samtools/{{versions.samtools}}

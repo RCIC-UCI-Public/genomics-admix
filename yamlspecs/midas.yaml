@@ -1,8 +1,11 @@
 !include common.yaml
 ---
 - package: MIDAS 
+  release: 3
   name: midas 
   version: "{{versions.midas}}"
+  family_version: "{{versions.python3_family}}"
+  python_version: "{{versions.python3}}"
   src_dir: "{{package}}-{{version}}"
   vendor_source: https://github.com/snayfach/MIDAS/archive/v{{version}}.{{extension}}
   description: |
@@ -10,6 +13,8 @@
     is an integrated pipeline that leverages >30,000 reference genomes 
     to estimate bacterial species abundance and strain-level genomic 
     variation, including gene content and SNPs, from shotgun metagnomes
+  root: "{{pkg_defaults.app_path}}/python/{{python_version}}"
+  bin_root: "{{root}}/lib/python{{family_version}}/site-packages/bin/Linux"
   build:
     patchfile: "{{name}}-{{version}}.patch"
     pkgmake: >
@@ -18,8 +23,14 @@
       - python/{{versions.python3}}
   install:
     makeinstall: >
-      python setup.py install --root $(ROOT)
+      python setup.py install --root $(ROOT);
+      mkdir -p $(ROOT){{bin_root}};
+      cp bin/Linux/hs* $(ROOT){{bin_root}}
   requires:
     - "python_{{versions.python3}}"
+    - "python_{{versions.python3}}-biopython"
+    - "python_{{versions.python3}}-numpy"
+    - "python_{{versions.python3}}-pysam"
+    - "python_{{versions.python3}}-pandas"
   files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
+    - "{{root}}"

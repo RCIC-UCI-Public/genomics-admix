@@ -3,6 +3,7 @@ gcc: "8.4.0"
 mkl: "2019.5.281"
 python: "2.7.17"
 python3: "3.8.0"
+python3_family: "3.8"
 python_major: "2.7"
 java:
   version: "1.8.0"
