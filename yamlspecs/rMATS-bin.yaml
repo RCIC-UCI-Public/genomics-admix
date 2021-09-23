@@ -1,0 +1,27 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: rMATS turbo
+  name: rMATS 
+  versions: !include versions.yaml
+  release: "{{versions.rMATS_bin.rel}}"
+  version: "{{versions.rMATS_bin.version}}"
+  python_version: "{{versions.rMATS_bin.python}}"
+  extension: tgz
+  vendor_source: https://sourceforge.net/projects/rnaseq-mats/files/MATS/{{name}}.{{version}}.{{extension}}
+  src_dir: "{{name}}.{{version}}"
+  turboversion: turbo-Linux-UCS4
+  description: |
+    rMATS turbo {{version}} is the C/Cython version of rMATS (http://rnaseq-mats.sourceforge.net).
+    The major difference between rMATS turbo and rMATS is speed and space usage. rMATS turbo is
+    100 times faster and the output file is 1000 times smaller than rMATS. These advantages make
+    analysis and storage of a large scale dataset easy and convenient
+  build:
+    modules:
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}}/;
+      cp -p -R {{name}}-{{turboversion}}/* $(ROOT){{root}}
+  requires:
+    - python_{{python_version}}-cython
+    - python_{{python_version}}-numpy

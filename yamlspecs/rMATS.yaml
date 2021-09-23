@@ -1,35 +1,12 @@
-!include rcic-package.yaml
-!include rpm.yaml
+!include common.yaml
 ---
 - package: rMATS turbo
   name: rMATS 
-  versions: !include versions.yaml
+  release: "{{versions.rMATS.rel}}"
   version: "{{versions.rMATS.version}}"
-  tag: "{{versions.rMATS.tag}}"
-  extension: "{{versions.rMATS.extension}}"
-  # for building from binary distro
-  vendor_source_bin: https://sourceforge.net/projects/rnaseq-mats/files/MATS/{{name}}.{{version}}.{{extension}}
-  src_dir_bin: "{{name}}.{{version}}"
-  pkgmake_bin: echo
-  makeinstall_bin: >
-    mkdir -p $(ROOT){{root}}/;
-    cp -p -R {{name}}-turbo-Linux-UCS4/* $(ROOT){{root}}
-  # for building from src distro
-  vendor_source_src: https://github.com/Xinglab/rmats-turbo/archive/v{{version}}.{{extension}}
-  src_dir_src: "rmats-turbo-{{version}}"
-  pkgmake_src: >
-    sed -i "s/main /\#main /" setup_environment.sh;
-    ./build_rmats --no-paired-model
-  makeinstall_src: >
-    mkdir -p $(ROOT){{root}}/rMATS_C;
-    $(INSTALL) -m 755 rMATS_C/rMATSexe $(ROOT){{root}}/rMATS_C;
-    cp -p -r rMATS_P $(ROOT){{root}};
-    $(INSTALL) rmats*so* $(ROOT){{root}};
-    $(INSTALL) -m 755 rmats.py $(ROOT){{root}};
-    $(INSTALL) -m 644 LICENSE README*  $(ROOT){{root}}
-  # actual build and install
-  vendor_source: "{{vendor_source_{{tag}}}}"
-  src_dir: "{{src_dir_{{tag}}}}"
+  python_version: "{{versions.rMATS.python}}"
+  vendor_source: https://github.com/Xinglab/rmats-turbo/archive/v{{version}}.{{extension}}
+  src_dir: "rmats-turbo-{{version}}"
   description: |
     rMATS turbo {{version}} is the C/Cython version of rMATS (http://rnaseq-mats.sourceforge.net).
     The major difference between rMATS turbo and rMATS is speed and space usage. rMATS turbo is
@@ -37,18 +14,24 @@
     analysis and storage of a large scale dataset easy and convenient
   build:
     base_modules:
-      - python/{{versions.rMATS.python}}
-    run_modules:
-      - star/{{versions.star}}
-      - samtools/{{versions.samtools}}
+      - "{{compiler}}/{{compiler_version}}"
+      - python/{{python_version}}
+      - gsl/{{versions.gsl}}/{{compiler}}.{{compiler_version}}
     modules:
       - "{{build.base_modules}}"
       - foundation
-    pkgmake: "{{pkgmake_{{tag}}}}"
+    pkgmake: >
+      sed -i "s/main /\#main /" setup_environment.sh;
+      ./build_rmats --no-paired-model
+  extras: LICENSE README*
   install:
-     makeinstall: "{{makeinstall_{{tag}}}}"
+     makeinstall: >
+       mkdir -p $(ROOT){{root}}/rMATS_C;
+       $(INSTALL) -m 755 rMATS_C/rMATSexe $(ROOT){{root}}/rMATS_C;
+       cp -p -r rMATS_P $(ROOT){{root}};
+       $(INSTALL) rmats*so* $(ROOT){{root}};
+       $(INSTALL) -m 755 rmats.py $(ROOT){{root}}
   requires:
-    - python_{{versions.rMATS.python}}-cython
-    - python_{{versions.rMATS.python}}-numpy
-    - samtools_{{versions.samtools}}
-    - star_{{versions.star}}
+    - "{{compiler}}_{{compiler_version}}"
+    - python_{{python_version}}-cython
+    - python_{{python_version}}-numpy

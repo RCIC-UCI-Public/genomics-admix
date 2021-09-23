@@ -1,4 +1,4 @@
-!include rMATS.yaml
+!include rMATS-bin.yaml
 !include rcic-module.yaml
 ---
 - package: rMATS Module
@@ -10,6 +10,6 @@
     alias: 
       - rMATS "python {{root}}/rmats.py"
     prereq: 
-      - "{{build.base_modules}}"
+      - python/{{python_version}}
       - star/{{versions.star}}
       - samtools/{{versions.samtools}}
