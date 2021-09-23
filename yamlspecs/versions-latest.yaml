@@ -1,0 +1,13 @@
+!include versions.yaml
+---
+# later version is build from binary distro
+plinkseq:
+  version:  "0.10"
+  git: 5d071291075ccbc4798b087b759e7455cfb4a825
+  build: "bin"
+  addmod:
+# later version is build from src  distro
+rMATS:
+  rel: 1
+  version: "4.1.1"
+  python: "3.8.0"
