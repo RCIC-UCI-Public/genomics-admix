@@ -5,10 +5,10 @@
   category: GENOMICS
   release: 2
   module:
-    <<: *ModuleCompiler
     prepend_path:
       - *Flagspath
       - PATH {{root}}/bin
       - LD_LIBRARY_PATH {{root}}/lib
     prereq:
       - "{{build.base_modules}}"
+      - *ModuleCompiler_prereq

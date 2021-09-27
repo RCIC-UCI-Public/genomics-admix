@@ -4,4 +4,6 @@
 - package: viennarna module
   category: GENOMICS
   module:
-    <<: *ModuleCompiler
+    requires:
+      - *ModuleCompiler_prereq
+

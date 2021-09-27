@@ -74,7 +74,7 @@ plinkseq:
   addmod: protobuf/2.4.1
 viennarna: "2.4.17"
 fastqtl: "2.184"
-R: "4.0.2"
+R: "4.0.4"
 pratt: "2.1"
 bbmap: "38.87"
 megahit: "1.2.9"
