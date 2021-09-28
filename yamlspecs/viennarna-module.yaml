@@ -3,7 +3,7 @@
 ---
 - package: viennarna module
   category: GENOMICS
-  module:
-    requires:
-      - *ModuleCompiler_prereq
+#  module:
+#    requires:
+#      - *ModuleCompiler_prereq
 
