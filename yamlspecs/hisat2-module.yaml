@@ -11,4 +11,3 @@
       - LD_LIBRARY_PATH {{root}}/lib
     prereq:
       - "{{build.base_modules}}"
-      - *ModuleCompiler_prereq
