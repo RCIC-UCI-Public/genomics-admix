@@ -1,12 +1,8 @@
-!include rcic-package.yaml
-!include rpm.yaml
+!include common.yaml
 ---
 - package: PRANK
   name: prank
-  versions: !include versions.yaml
   version: "{{versions.prank}}"
-  compiler: gcc
-  compiler_version: "{{versions.gcc}}"
   extension: tgz
   vendor_source: http://wasabiapp.org/download/prank/prank.source.{{version}}.{{extension}}
   description: |
@@ -18,8 +14,6 @@
   build:
     configure: ./configure
     configure_args: --prefix={{root}} 
-    modules:
-      - "{{compiler}}/{{compiler_version}}"
     pkgmake: cd src; make
   install:
      makeinstall: >
@@ -27,5 +21,3 @@
        mkdir -p $(ROOT){{root}}/share/man/man1;
        $(INSTALL) -m 755 src/prank $(ROOT){{root}}/bin;
        $(INSTALL) -m 644 src/prank.1 $(ROOT){{root}}/share/man/man1
-  requires:
-    - "{{compiler}}_{{compiler_version}}"
