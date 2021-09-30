@@ -9,5 +9,5 @@
     prepend_path:
       - PATH {{root}}/bin
     prereq:
-      - java/{{versions.java.version}}
-      - *ModuleCompiler_prereq
+      - java/{{versions.java}}
+      - "{{build.modules}}"
