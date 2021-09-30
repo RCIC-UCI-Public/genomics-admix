@@ -4,7 +4,7 @@
   release: 3
   name: midas 
   version: "{{versions.midas}}"
-  family_version: "{{versions.python3_family}}"
+  python_major: "{{versions.python3_major}}"
   python_version: "{{versions.python3}}"
   src_dir: "{{package}}-{{version}}"
   vendor_source: https://github.com/snayfach/MIDAS/archive/v{{version}}.{{extension}}
@@ -14,7 +14,7 @@
     to estimate bacterial species abundance and strain-level genomic 
     variation, including gene content and SNPs, from shotgun metagnomes
   root: "{{pkg_defaults.app_path}}/python/{{python_version}}"
-  bin_root: "{{root}}/lib/python{{family_version}}/site-packages/bin/Linux"
+  bin_root: "{{root}}/lib/python{{python_major}}/site-packages/bin/Linux"
   build:
     patchfile: "{{name}}-{{version}}.patch"
     pkgmake: >

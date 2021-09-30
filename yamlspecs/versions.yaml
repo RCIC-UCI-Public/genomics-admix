@@ -1,15 +1,6 @@
+!include site.yaml
 ---
-gcc: "8.4.0" 
-mkl: "2019.5.281"
-python: "2.7.17"
-python3: "3.8.0"
-python3_family: "3.8"
-python_major: "2.7"
-java:
-  version: "1.8.0"
-  name: java8 
 llvm: "9.0.1"
-perl: "5.30.0"
 ncbi_blast: "2.10.0"
 ncbi_ngs: "2.10.2"
 ncbi_vdb: "2.10.2"
@@ -55,7 +46,6 @@ fasttree: "2.1.11"
 bedtools: "2.29.2"
 parallel: "20200222"
 roary: "3.13.0"
-#arcasHLA: "0.2.0"
 bionetgen: "2.5.1"
 bionetgenmodules: "20201022"
 bedops: "2.4.39"
@@ -74,7 +64,6 @@ plinkseq:
   addmod: protobuf/2.4.1
 viennarna: "2.4.17"
 fastqtl: "2.184"
-R: "4.0.4"
 pratt: "2.1"
 bbmap: "38.87"
 megahit: "1.2.9"
