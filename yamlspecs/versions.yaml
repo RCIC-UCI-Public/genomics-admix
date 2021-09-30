@@ -16,7 +16,6 @@ rMATS:
   version: "4.1.0"
   python: "3.8.0"
 star: "2.7.3a"
-gsl: "2.6"
 canu: "2.0"
 flye: "2.7.1"
 mummer: "4.0.0"
