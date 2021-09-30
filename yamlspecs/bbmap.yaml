@@ -13,7 +13,7 @@
     See https://sourceforge.net/projects/bbmap
   build:
     modules: 
-      - java/{{versions.java.version}}
+      - java/{{versions.java}}
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}}/jni;
@@ -31,5 +31,5 @@
        cp -p -r config current docs pipelines pytools resources *.sh $(ROOT){{root}};
        $(INSTALL) -m 644 bitbucket-pipelines.yml build.xml license.txt README.md $(ROOT){{root}}
   requires:
-    - jre = {{versions.java.version}} 
+    - jre = {{versions.java}} 
   rpmJarRepack: 0
