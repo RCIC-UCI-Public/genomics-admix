@@ -1,7 +1,7 @@
 !include common.yaml
 ---
 - package: MIDAS 
-  release: 3
+  release: 4
   name: midas 
   version: "{{versions.midas}}"
   python_major: "{{versions.python3_major}}"
