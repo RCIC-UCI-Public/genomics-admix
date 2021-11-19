@@ -113,3 +113,12 @@
  
  def auto_detect_file_type(inpath):
  	""" Detect file type [fasta or fastq] of <p_reads> """
+--- MIDAS-1.3.2/setup.py	2021-11-18 15:41:14.352332096 -0800
++++ MIDAS-1.3.2/setup.py.new	2021-11-18 15:55:17.641332096 -0800
+@@ -15,5 +15,6 @@
+         packages=['midas'] + ['midas.' + i for i in find_packages('midas')],
+         provides=['midas'],
+         scripts=['scripts/' + i for i in os.listdir('scripts')],
++	data_files=[('lib/python3.8/site-packages/midas/build/', ['midas/build/phyeco.hmm'])],
+ 	install_requires = ['biopython >= 1.62', 'numpy >= 1.7.0', 'pysam >= 0.8.1', 'pandas >= 0.17.1']
+ )
