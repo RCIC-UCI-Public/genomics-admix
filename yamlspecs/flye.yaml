@@ -14,13 +14,13 @@
   src_dir: Flye-{{version}}
   build:
     pkgmake: >
-      python setup.py build
+      unset MAKEFLAGS; python setup.py build
     modules: 
       - "{{compiler}}/{{compiler_version}}"
       - python/{{versions.python3}}
   install:
     makeinstall: >
-      python setup.py install --root $(ROOT)
+      unset MAKEFLAGS; python setup.py install --root $(ROOT)
   requires:
     - "{{compiler}}_{{compiler_version}}"
     - "python_{{versions.python3}}"
