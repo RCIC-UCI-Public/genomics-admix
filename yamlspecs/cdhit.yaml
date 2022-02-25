@@ -17,7 +17,7 @@
     pkgmake: >
       sed -i -e "s%\#\!/usr/bin/perl%\#\!/usr/bin/env perl%" *.pl;
       sed -i -e "s/use Text::NSP/\#use Text::NSP/" FET.pl;
-      make;
+      unset MAKEFLAGS; make;
       (cd cd-hit-auxtools; sed -i -e "s%\#\!/usr/bin/perl%\#\!/usr/bin/env perl%" *.pl; make)
   auxtools: cd-hit-dup cd-hit-lap read-linker cd-hit-dup-PE-out.pl
   install:
