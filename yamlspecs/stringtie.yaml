@@ -15,7 +15,7 @@
       - "{{compiler}}/{{compiler_version}}"
     pkgmake: >
       sed -i -e "s/env python2/env python/" prepDE.py;
-      make release
+      unset MAKEFLAGS; make release
   extras: LICENSE README.md
   install:
      makeinstall: >
