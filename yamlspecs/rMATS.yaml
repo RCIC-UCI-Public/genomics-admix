@@ -21,6 +21,7 @@
       - "{{build.base_modules}}"
       - foundation
     pkgmake: >
+      unset MAKEFLAGS;
       sed -i "s/main /\#main /" setup_environment.sh;
       ./build_rmats --no-paired-model
   extras: LICENSE README*
