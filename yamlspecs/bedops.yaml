@@ -10,7 +10,7 @@
     archiving, conversion and other management of genomic data of arbitrary scale.
     See https://bedops.readthedocs.io/en/latest/content/overview.html
   build:
-    pkgmake: make all
+    pkgmake: unset MAKEFLAGS; make all
   extras: LICENSE README.md
   install:
      makeinstall: >
