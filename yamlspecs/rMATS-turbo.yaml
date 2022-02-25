@@ -12,6 +12,7 @@
   src_dir: "rmats-turbo-{{version}}"
   build:
     pkgmake: >
+      unset MAKEFLAGS;
       sed -i "s/main /\#main /" setup_environment.sh;
       ./build_rmats --no-paired-model
     base_modules: 
