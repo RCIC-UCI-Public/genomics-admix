@@ -11,6 +11,7 @@
   vendor_source: https://sourceforge.net/projects/rnaseq-mats/files/MATS/{{name}}.{{version}}.{{extension}}
   src_dir: "{{name}}.{{version}}"
   turboversion: turbo-Linux-UCS4
+  addfile: filter-requires-{{name}}-bin.sh
   description: |
     rMATS turbo {{version}} is the C/Cython version of rMATS (http://rnaseq-mats.sourceforge.net).
     The major difference between rMATS turbo and rMATS is speed and space usage. rMATS turbo is
@@ -25,3 +26,5 @@
   requires:
     - python_{{python_version}}-cython
     - python_{{python_version}}-numpy
+    - gsl
+  rpmFilters: *filterRequires
