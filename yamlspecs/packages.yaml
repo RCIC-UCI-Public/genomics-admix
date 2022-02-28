@@ -1,3 +1,4 @@
+site: !include site.yaml
 system:
   - zlib-devel
   - perl-Time-Piece
@@ -47,8 +48,8 @@ bootstrap:
 build:
   - plink
   - plink-module
-  - plinkseq
-  - plinkseq-module
+  - !ifeq "{{site.os_release}},7,plinkseq,"
+  - !ifeq "{{site.os_release}},7,plinkseq-module,"
   - rMATS
   - rMATS-module
   - rMATS-bin
