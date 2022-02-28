@@ -46,6 +46,6 @@
     patchfile: "{{name}}-{{version}}.patch"
     modules:
       - "{{addmod}}"
-    pkgmake: make -j 8
+    pkgmake: unset MAKEFLAGS; make -j 8
   install:
     makeinstall: "{{makeinstall_{{tag}}}}"
