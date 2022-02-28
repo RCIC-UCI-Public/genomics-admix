@@ -11,12 +11,14 @@
     Pratt {{version}} is a tool that allows the user to search
     for patterns conserved in a set of protein sequences
   no_src_dir: True
+  addfile: "{{name}}-{{version}}.patch"
   bdir: builddir
   build:
     pkgmake: >
       mkdir {{bdir}}; 
       cd {{bdir}}; 
       tar xvf $(REDHAT.ROOT)/sources/{{src_tarball}};
+      patch -p1 < ../{{name}}-{{version}}.patch;
       make
     modules:
   install:

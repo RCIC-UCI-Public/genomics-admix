@@ -1,0 +1,27 @@
+*** builddir/makefile	1997-02-19 01:47:16.000000000 -0800
+--- foodir/makefile	2022-02-28 11:19:00.406824772 -0800
+***************
+*** 1,11 ****
+  CC= gcc
+  OBJECTS= pratt.o sequence.o block.o scan.o pattern.o hit.o search.o menu.o swiss.o al.o tree.o mst.o pam_dist.o help.o
+! CFLAGS= -O2
+   
+  all: pratt 
+   
+  pratt: $(OBJECTS)
+! 	$(CC) -O4  -o pratt $(OBJECTS) -lm 
+  
+  clean:
+  	touch *.c; make pratt
+--- 1,11 ----
+  CC= gcc
+  OBJECTS= pratt.o sequence.o block.o scan.o pattern.o hit.o search.o menu.o swiss.o al.o tree.o mst.o pam_dist.o help.o
+! CFLAGS= -O2 -std=c90
+   
+  all: pratt 
+   
+  pratt: $(OBJECTS)
+! 	$(CC) $(CFLAGS) -o pratt $(OBJECTS) -lm 
+  
+  clean:
+  	touch *.c; make pratt
