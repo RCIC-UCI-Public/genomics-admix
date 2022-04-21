@@ -15,6 +15,7 @@
     pkgmake: >
       sed -i 's/INC_MATH=.*/INC_MATH=$$(R__CPPFLAGS)/' Makefile;
       sed -i 's%LIB_MATH=.*%LIB_MATH=$$(R__PREFIX)/lib64/libRmath.a%' Makefile;
+      sed -i 's% -lblas% -lgslcblas%' Makefile;
       make cleanall;
       make -j 8
   extras: LICENCE README
