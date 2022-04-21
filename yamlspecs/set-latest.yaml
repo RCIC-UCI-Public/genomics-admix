@@ -2,8 +2,8 @@
 ---
 versions: versions-latest.yaml
 build:
-  - plinkseq
-  - plinkseq-module
+#nouse  - plinkseq
+#nouse  - plinkseq-module
   - rMATS
   - rMATS-module
 manifest:
