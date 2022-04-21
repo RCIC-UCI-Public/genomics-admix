@@ -4,7 +4,7 @@
   name: rMATS 
   release: "{{versions.rMATS.rel}}"
   version: "{{versions.rMATS.version}}"
-  python_version: "{{versions.rMATS.python}}"
+  python_version: "{{versions.python3}}"
   vendor_source: https://github.com/Xinglab/rmats-turbo/archive/v{{version}}.{{extension}}
   src_dir: "rmats-turbo-{{version}}"
   description: |
