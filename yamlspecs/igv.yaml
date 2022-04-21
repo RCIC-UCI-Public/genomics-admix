@@ -2,9 +2,11 @@
 ---
 - package: IGV 
   name: igv 
-  version: "{{versions.igv}}"
+  version: "{{versions.igv.version}}"
   extension: zip
-  vendor_source: https://data.broadinstitute.org/igv/projects/downloads/2.8/IGV_Linux_{{version}}.{{extension}}
+  with: "{{versions.igv.with}}"
+  major: "{{versions.igv.major}}"
+  vendor_source: https://data.broadinstitute.org/igv/projects/downloads/{{major}}/IGV_Linux_{{version}}{{with}}.{{extension}}
   description: |
     The Integrative Genomics Viewer (IGV) {{version}} is a high-performance, easy-to-use,
     interactive tool for the visual exploration of genomic data. It supports flexible
