@@ -3,7 +3,7 @@
 - package: megahit
   name: megahit 
   version: "{{versions.megahit}}"
-  vendor_source: wget https://github.com/voutcn/megahit/archive/v{{version}}.{{extension}}
+  vendor_source: https://github.com/voutcn/megahit/archive/v{{version}}.{{extension}}
   description: |
     MEGAHIT {{version}} is an ultra-fast and memory-efficient NGS assembler.
     It is optimized for metagenomes, but also works well on generic single
