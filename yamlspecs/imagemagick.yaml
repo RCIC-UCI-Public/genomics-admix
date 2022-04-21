@@ -35,3 +35,4 @@
     - "{{parent}}"
     - "{{pkg_defaults.app_path}}/perl/{{versions.perl}}"
   rpmFilters: *filterRequiresProvides
+  rpmBuildIdLinks: "none"
