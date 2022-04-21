@@ -43,3 +43,15 @@ b74b8b21cbf3d380863bbdf64625ae415f9f87cf  sources/bbmap-38.87.tar.gz 1kOn9rCNbrD
 d87b52983028436582ea0518b7dde6557a8b38d3  sources/kraken2-2.1.1.tar.gz 1tugIGgzmorXpJC6a5HyZf2os-JoJw1wP
 a40ffc3bd7c8acb2396d43f8979511925ead6e18  sources/bracken-2.6.0.tar.gz 1DygeagxNc2JiLgEwjicWgIBe2zKCqDC_
 f81865b1d26bb93577fc640658c6bf05ea360ca8  sources/hisat-genotype-1.3.2.tar.gz 1jcRTDx6BnkK2qrvLCIvP94Qf_nTlEfE7
+f28c006459af9dfba086bdb5aa203252a64e18af  sources/atomizer-20220421.tar.gz 1DSFlRwAvyyOAB5JD6HaPlcsASVXWM-aD
+5a36bdc5d0123935ce790a1bae5a4d30851b8aac  sources/bbmap-38.96.tar.gz 1CD9ZO-SEiEg1RM_kDYJYW9TDfdT3Mufd
+a30da5145eac543262cdc65b7da2a9c31323d7d5  sources/bionetgen-2.8.0.tar.gz 1g2_qSz5zh8JpME31zA3evrIka4CZ0hLp
+4122485864dd99f6ba21f94429eb088e0f610e35  sources/bismark-0.23.1.tar.gz 16n0GeFfjgpjM66EGD28KvdXWPgLSPL6P
+fd041cb1d6175982dab7a3bba64d14c5ce3a6dd4  sources/bracken-2.6.2.tar.gz 1mEkZJxyHo27vtJTZf9rlwwzS9WHAnSir
+2b481a31d87923a1c41cdbf527547e0bc891a7d9  sources/diamond-2.0.15.tar.gz 12QvVl7szw0Ki61hzd5XM8Z2Svw9m4EY1
+75b6516009a0f239a2ffda9cf39bfe512ccd9e5b  sources/igv-2.12.3.zip 12oA7l_gEnwh1wc4Ij8f04EnuQcX67gEQ
+64f30ba2956b4dd32a69d379186b819b9a8dce21  sources/imagemagick-7.1.0.30.tar.gz 1ynUhB1HAcHEW8uw1oy2Mcermpjm-0Ksw
+df3e954b8c2c13f0faf55874850a15e51871e19e  sources/kraken2-2.1.2.tar.gz 1QNZdcL0ibZiAhyw315qbotTXPJ3cJCP5
+69d53ae95d1e649c4d5d8b28c48c9338e757e95a  sources/nfsim-20220421.tar.gz 1jVmweRxf1fv0VdI9jg9A2rw73McWhovi
+c966840dea90d929b9a3fe5b9c1ebaad13adf50e  sources/rMATS-4.1.2.tar.gz 1BHp11tf2afQQLOBE64CNEMPrItd3EGpZ
+1550cfb824c3f5a151a5bf57ce9ead39b00c7209  sources/stringtie-2.2.1.tar.gz 1FbbaU32EjM4U7yFe6442zzLbIlgvzaWI
