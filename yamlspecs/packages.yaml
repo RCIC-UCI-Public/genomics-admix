@@ -52,22 +52,14 @@ build:
   - !ifeq "{{site.os_release}},7,plinkseq-module,"
   - rMATS
   - rMATS-module
-  - rMATS-bin
-  - rMATS-bin-module
   - canu
   - canu-module
-  - flye
-  - flye-module
   - mummer
   - mummer-module
   - velocyto
   - velocyto-module
-  - raxml
-  - raxml-module
   - prodigal
   - prodigal-module
-  - scHLAcount
-  - scHLAcount-module
   - roary
   - roary-module
   - midas
@@ -86,16 +78,8 @@ build:
   - bedops-module
   - bionetgen
   - bionetgen-module
-  - vcell
-  - vcell-module
-  - usearch
-  - usearch-module
-  - viennarna
-  - viennarna-module
   - fastqtl
   - fastqtl-module
-  - pratt
-  - pratt-module
   - bbmap
   - bbmap-module
   - megahit
@@ -104,10 +88,19 @@ build:
   - kraken2-module
   - bracken
   - bracken-module
-  - hisat-genotype
-  - hisat-genotype-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
 sets:
   - latest
+  - centos8
+###### Unused packages, keep for a reference
+# flye
+# scHLAcount
+# raxml
+# vcell
+# usearch
+# viennarna
+# pratt
+# hisat-genotype
+# rMATS-bin

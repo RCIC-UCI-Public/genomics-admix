@@ -1,0 +1,33 @@
+!include versions.yaml
+!include updates8.yaml
+---
+# to change?
+llvm: "9.0.1"
+ncbi_blast: "2.10.0"
+ncbi_ngs: "2.10.2"
+ncbi_vdb: "2.10.2"
+bowtie2: "2.4.1"
+samtools: "1.10"
+# to change?
+imagemagick:
+  version: "7.1.0.30"
+  versionRev: "7.1.0-30"
+rMATS:
+  rel: 1
+  version: "4.1.2"
+bismark: "0.23.1"
+stringtie: "2.2.1"
+igv:
+  version:  "2.12.3"
+  major:  "2.12"
+  with:  "_WithJava"
+diamond: "2.0.15"
+bionetgen: "2.8.0"
+bionetgenmodules: "20220421"
+bbmap: "38.96"
+kraken2: "2.1.2"
+bracken: "2.6.2"
+
+#################3
+# has newer version mafft/7.471     140
+# has newer version plink/2.00a2.3  108
