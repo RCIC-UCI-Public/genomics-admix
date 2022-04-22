@@ -14,11 +14,11 @@
     pkgmake: >
       python setup.py build
     modules: 
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
   install:
     makeinstall: >
       python setup.py install --root $(ROOT)
   requires:
-    - "python_{{versions.python3}}"
+    - "python_{{pyversion}}"
   files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
+    - "{{pkg_defaults.app_path}}/python/{{pyversion}}"

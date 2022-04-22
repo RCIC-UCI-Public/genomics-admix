@@ -2,7 +2,7 @@
 ---
 - package: numpy-groupies 
   name: numpy-groupies 
-  baserpm: python_{{versions.python3}}-{{name}}
+  baserpm: python_{{pyversion}}-{{name}}
   version: "{{versions.numpy_groupies}}"
   vendor_source: https://github.com/ml31415/numpy-groupies/archive/v{{version}}.{{extension}}
   description: |
@@ -12,12 +12,12 @@
     pkgmake: >
       python setup.py build
     modules: 
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
   install:
     makeinstall: >
       python setup.py install --root $(ROOT)
   requires:
-    - "python_{{versions.python3}}"
-    - "python_{{versions.python3}}-llvmlite"
+    - "python_{{pyversion}}"
+    - "python_{{pyversion}}-llvmlite"
   files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
+    - "{{pkg_defaults.app_path}}/python/{{pyversion}}"

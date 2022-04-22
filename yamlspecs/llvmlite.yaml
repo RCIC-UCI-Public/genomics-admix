@@ -2,7 +2,7 @@
 ---
 - package: llvmlite 
   name: llvmlite 
-  baserpm: python_{{versions.python3}}-{{name}}
+  baserpm: python_{{pyversion}}-{{name}}
   version: "{{versions.llvmlite}}"
   vendor_source: https://github.com/numba/llvmlite/archive/v{{version}}.{{extension}}
   description: |
@@ -18,14 +18,14 @@
       unset MAKEFLAGS; python setup.py build
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
       - llvm/{{versions.llvm}}
   install:
     makeinstall: >
       python setup.py install --root $(ROOT)
   requires:
     - "{{compiler}}_{{compiler_version}}"
-    - "python_{{versions.python3}}"
+    - python_{{pyversion}}
     - llvm_{{versions.llvm}}
   files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
+    - "{{pkg_defaults.app_path}}/python/{{pyversion}}"
