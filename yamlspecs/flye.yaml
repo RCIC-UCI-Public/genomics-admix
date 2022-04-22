@@ -17,12 +17,10 @@
       unset MAKEFLAGS; python setup.py build
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
   install:
     makeinstall: >
-      unset MAKEFLAGS; python setup.py install --root $(ROOT)
+      unset MAKEFLAGS; python setup.py install --prefix $(ROOT){{root}}
   requires:
     - "{{compiler}}_{{compiler_version}}"
     - "python_{{versions.python3}}"
-  files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"

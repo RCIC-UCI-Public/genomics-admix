@@ -5,8 +5,10 @@
   category: GENOMICS
   module:
     setenv: 
-      - MIDAS_HOME {{pkg_defaults.app_path}}/python/{{versions.python3}}/bin
+      - MIDAS_HOME {{root}}/bin
     prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
     prereq: 
       - "{{build.modules}}"
       - bowtie2/{{versions.bowtie2}}

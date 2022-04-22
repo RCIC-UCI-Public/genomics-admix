@@ -16,18 +16,16 @@
       python setup.py build
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
       - llvm/{{versions.llvm}}
   install:
     makeinstall: >
-      python setup.py install --root $(ROOT)
+      python setup.py install --root $(ROOT) --prefix {{root}}
   requires:
     - "{{compiler}}_{{compiler_version}}"
-    - "python_{{versions.python3}}"
-    - "python_{{versions.python3}}-click"
-    - "python_{{versions.python3}}-llvmlite"
-    - "python_{{versions.python3}}-numpy-groupies"
+    - "python_{{pyversion}}"
+    - "python_{{pyversion}}-click"
+    - "python_{{pyversion}}-llvmlite"
+    - "python_{{pyversion}}-numpy-groupies"
     - numba_{{versions.numba}}
     - llvm_{{versions.llvm}}
-  files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"

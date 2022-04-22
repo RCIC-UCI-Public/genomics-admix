@@ -13,23 +13,21 @@
       python setup.py build
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
   install:
     makeinstall: >
-      python setup.py install --root $(ROOT)
+      python setup.py install --root $(ROOT) --prefix {{root}}
   requires:
     - "{{compiler}}_{{compiler_version}}"
-    - "python_{{versions.python3}}"
-    - "python_{{versions.python3}}-numpy"
-    - "python_{{versions.python3}}-scipy"
-    - "python_{{versions.python3}}-cython"
-    - "python_{{versions.python3}}-matplotlib"
-    - "python_{{versions.python3}}-h5py"
-    - "python_{{versions.python3}}-pandas"
-    - "python_{{versions.python3}}-pysam"
-    - "python_{{versions.python3}}-scikit-learn"
-    - "python_{{versions.python3}}-click"
+    - "python_{{pyversion}}"
+    - "python_{{pyversion}}-numpy"
+    - "python_{{pyversion}}-scipy"
+    - "python_{{pyversion}}-cython"
+    - "python_{{pyversion}}-matplotlib"
+    - "python_{{pyversion}}-h5py"
+    - "python_{{pyversion}}-pandas"
+    - "python_{{pyversion}}-pysam"
+    - "python_{{pyversion}}-scikit-learn"
+    - "python_{{pyversion}}-click"
     - numba_{{versions.numba}}
     - loompy_{{versions.loompy}}
-  files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"

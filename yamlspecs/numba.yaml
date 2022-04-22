@@ -18,16 +18,14 @@
       python setup.py build
     base_modules: 
       - "{{compiler}}/{{compiler_version}}"
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
     modules: 
       - "{{build.base_modules}}"
       - llvm/{{versions.llvm}}
   install:
     makeinstall: >
-      python setup.py install --root $(ROOT)
+      python setup.py install --root $(ROOT) --prefix {{root}}
   requires:
     - "{{compiler}}_{{compiler_version}}"
-    - python_{{versions.python3}}
-    - python_{{versions.python3}}-llvmlite
-  files:
-    - "{{pkg_defaults.app_path}}/python/{{versions.python3}}"
+    - python_{{pyversion}}
+    - python_{{pyversion}}-llvmlite

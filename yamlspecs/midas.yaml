@@ -4,8 +4,6 @@
   release: 4
   name: midas 
   version: "{{versions.midas}}"
-  python_major: "{{versions.python3_major}}"
-  python_version: "{{versions.python3}}"
   src_dir: "{{package}}-{{version}}"
   vendor_source: https://github.com/snayfach/MIDAS/archive/v{{version}}.{{extension}}
   description: |
@@ -13,24 +11,21 @@
     is an integrated pipeline that leverages >30,000 reference genomes 
     to estimate bacterial species abundance and strain-level genomic 
     variation, including gene content and SNPs, from shotgun metagnomes
-  root: "{{pkg_defaults.app_path}}/python/{{python_version}}"
-  bin_root: "{{root}}/lib/python{{python_major}}/site-packages/bin/Linux"
+  bin_root: "{{root}}/lib/python{{pymajor}}/site-packages/bin/Linux"
   build:
     patchfile: "{{name}}-{{version}}.patch"
     pkgmake: >
       python setup.py build
     modules: 
-      - python/{{versions.python3}}
+      - python/{{pyversion}}
   install:
     makeinstall: >
-      python setup.py install --root $(ROOT);
+      python setup.py install --root $(ROOT) --prefix {{root}};
       mkdir -p $(ROOT){{bin_root}};
       cp bin/Linux/hs* $(ROOT){{bin_root}}
   requires:
-    - "python_{{versions.python3}}"
-    - "python_{{versions.python3}}-biopython"
-    - "python_{{versions.python3}}-numpy"
-    - "python_{{versions.python3}}-pysam"
-    - "python_{{versions.python3}}-pandas"
-  files:
-    - "{{root}}"
+    - "python_{{pyversion}}"
+    - "python_{{pyversion}}-biopython"
+    - "python_{{pyversion}}-numpy"
+    - "python_{{pyversion}}-pysam"
+    - "python_{{pyversion}}-pandas"
