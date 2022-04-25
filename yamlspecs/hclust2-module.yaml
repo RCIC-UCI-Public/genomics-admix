@@ -1,0 +1,12 @@
+!include hclust2.yaml
+!include rcic-module.yaml
+---
+- package: hclust2 module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 

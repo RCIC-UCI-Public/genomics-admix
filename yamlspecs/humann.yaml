@@ -1,0 +1,20 @@
+!include common.yaml
+---
+- package: humann 
+  name: humann
+  version: "{{versions.humann}}"
+  vendor_source: https://github.com/biobakery/humann/archive/refs/tags/{{version}}.{{extension}}
+  description: |
+    HUMAnN {{version}} is the next generation of HUMAnN (HMP Unified Metabolic Analysis Network).
+    See https://github.com/biobakery//humann
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --bypass-dependencies-install --prefix $(ROOT){{root}}
+  requires:
+    - "python_{{pyversion}}"

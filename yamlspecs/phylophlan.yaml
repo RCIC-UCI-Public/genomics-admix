@@ -1,0 +1,22 @@
+!include common.yaml
+---
+- package: PhyloPhlAn 
+  name: phylophlan
+  version: "{{versions.phylophlan}}"
+  vendor_source: https://github.com/biobakery/phylophlan/archive/refs/tags/{{version}}.{{extension}}
+  description: |
+    PhyloPhlAn {{version}} is an integrated pipeline for large-scale
+    phylogenetic profiling of genomes and metagenomes
+  PL: phylophlan/phylophlan_substitution_matrices/vt_scores.pl
+  build:
+    pkgmake: >
+      sed -i -e "s%\#\!/bin/perl%\#\!/usr/bin/env perl%" {{PL}};
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --root $(ROOT) --prefix {{root}}
+  requires:
+    - "python_{{pyversion}}"

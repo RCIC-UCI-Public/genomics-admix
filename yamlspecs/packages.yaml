@@ -94,6 +94,7 @@ manifest:
 sets:
   - latest
   - centos8
+  - metagenomics
 ###### Unused packages, keep for a reference
 # flye
 # scHLAcount

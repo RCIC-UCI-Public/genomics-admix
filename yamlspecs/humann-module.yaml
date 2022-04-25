@@ -1,0 +1,15 @@
+!include humann.yaml
+!include rcic-module.yaml
+---
+- package: humann module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 
+      - glpk/{{versions.glpk}} 
+      - diamond/{{versions.diamond}} 
+      - bowtie2/{{versions.bowtie2}} 

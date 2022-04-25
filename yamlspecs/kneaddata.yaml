@@ -1,0 +1,21 @@
+!include common.yaml
+---
+- package: kneaddata 
+  name: kneaddata
+  version: "{{versions.kneaddata}}"
+  vendor_source: https://github.com/biobakery/kneaddata/archive/refs/tags/{{version}}.{{extension}}
+  description: |
+    KneadData {{version}} is a tool designed to perform quality control on metagenomic and
+    metatranscriptomic sequencing data, especially data from microbiome experiments. 
+  src_dir: "{{package}}-{{version}}"
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --bypass-dependencies-install --prefix $(ROOT){{root}}
+  requires:
+    - "python_{{pyversion}}"

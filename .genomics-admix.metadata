@@ -55,3 +55,15 @@ df3e954b8c2c13f0faf55874850a15e51871e19e  sources/kraken2-2.1.2.tar.gz 1QNZdcL0i
 69d53ae95d1e649c4d5d8b28c48c9338e757e95a  sources/nfsim-20220421.tar.gz 1jVmweRxf1fv0VdI9jg9A2rw73McWhovi
 c966840dea90d929b9a3fe5b9c1ebaad13adf50e  sources/rMATS-4.1.2.tar.gz 1BHp11tf2afQQLOBE64CNEMPrItd3EGpZ
 1550cfb824c3f5a151a5bf57ce9ead39b00c7209  sources/stringtie-2.2.1.tar.gz 1FbbaU32EjM4U7yFe6442zzLbIlgvzaWI
+1cbc7ede1c10a2d244a23f21b6cd5abf5fb4ef6b  sources/bcbio-gff-0.6.9.tar.gz 1J-yv_Y0VJlp1qicyFwrkSCod7tfJjtQV
+4fe0c3a160a7804b313262c052cc5e40417f1f9c  sources/biom-format-2.1.12.tar.gz 1WrVCoH29uxIjDCHN9ZDTur4EIhKlAAKz
+645de15d34e85da68a8354c46d03d8c3e784f665  sources/cmseq-1.0.4.tar.gz 1uWcAKVnh9IvZ4qygRJ_FbaJth6uVLvc_
+d8937c9773f6870c3fc36de036fe8fc33bbf5f98  sources/dendropy-4.5.2.tar.gz 1A9PCe1nctr2vy7urbYfBCmDtSJ90udNP
+3a85b1e4c806b91deebfcf9a845b9308cd785d64  sources/glpk-5.0.tar.gz 1qk60pPjfBUWfy8CQQJjbkiKgY0azZMAd
+ee1336ab9ec6f2f2d3edb5838ffd12288c1c4aac  sources/hclust2-1.0.0.tar.gz 1F6TOSNTWUZD693EDh-7nZKWDWspngCS3
+cf9f89f20fc4acba78b416ed368f877f06354aa2  sources/humann-3.0.1.tar.gz 1agceX06CYuqVPFxNq7vfCI46Ie2PvRyi
+3e3760d4b02f7682da6c1d6862bda85291584e23  sources/kneaddata-0.10.0.tar.gz 1nsyK7mTVmY2wSlOH01OsPT2ZLlUPKzya
+af4940615cdfdfde1c3d45c15416e1a3936b99af  sources/metaphlan-3.0.14.tar.gz 1i_UyqOSvxZquvgGzaAlNdCj1iStZvmwR
+fe2dc103ac3350f3d8a48689d867a912fd231c0f  sources/phylophlan-3.0.2.tar.gz 1o-d-lfzH-EWh6agLlt3JdJVdMCYJOnlf
+61b55962a128f90ed0d007279af90ddd2df90a64  sources/seaborn-0.11.2.tar.gz 1scN_BesJEwcssRdZH0mDSOB1eiperVGz
+fd7622dc5791493d40cf4961b735f10f8fb4f312  sources/trimmomatic-0.39.zip 1HHW4IcZJljMxLCzOsydpKA9sA7JZvCKA

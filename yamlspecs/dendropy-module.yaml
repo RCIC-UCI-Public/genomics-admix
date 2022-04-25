@@ -1,0 +1,12 @@
+!include dendropy.yaml
+!include rcic-module.yaml
+---
+- package: dendropy module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 

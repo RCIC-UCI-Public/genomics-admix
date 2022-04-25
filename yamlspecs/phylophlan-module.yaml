@@ -1,0 +1,12 @@
+!include phylophlan.yaml
+!include rcic-module.yaml
+---
+- package: phylophlan module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 

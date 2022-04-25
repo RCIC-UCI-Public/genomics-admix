@@ -1,0 +1,12 @@
+!include biom-format.yaml
+!include rcic-module.yaml
+---
+- package: biom-format module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 

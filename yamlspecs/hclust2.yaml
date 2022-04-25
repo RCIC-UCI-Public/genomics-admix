@@ -1,0 +1,20 @@
+!include common.yaml
+---
+- package: hclust2 
+  name: hclust2
+  version: "{{versions.hclust2}}"
+  vendor_source: https://github.com/SegataLab/hclust2/archive/refs/tags/{{version}}.{{extension}}
+  description: |
+    Hclust2 {{version}} is a handy tool for plotting heat-maps with several useful
+    options to produce high quality figures that can be used in publication
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --root $(ROOT) --prefix {{root}}
+  requires:
+    - "python_{{pyversion}}"

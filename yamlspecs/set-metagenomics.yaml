@@ -1,0 +1,28 @@
+!include packages.yaml
+---
+versions: versions-metagenomics.yaml
+system:
+bootstrap:
+  - bcbio-gff
+  - seaborn
+  - cmseq
+  - cmseq-module
+  - glpk
+  - glpk-module
+  - biom-format
+  - biom-format-module
+  - dendropy
+  - dendropy-module
+  - hclust2
+  - hclust2-module
+  - phylophlan
+  - phylophlan-module
+  - trimmomatic
+  - trimmomatic-module
+build:
+  - metaphlan
+  - metaphlan-module
+  - humann
+  - humann-module
+  - kneaddata
+  - kneaddata-module

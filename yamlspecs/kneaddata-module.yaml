@@ -1,0 +1,17 @@
+!include kneaddata.yaml
+!include rcic-module.yaml
+---
+- package: kneaddata module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 
+      - trimmomatic/{{versions.trimmomatic}} 
+      - bowtie2/{{versions.bowtie2}} 
+      - trf/{{versions.trf}} 
+      - fastqc/{{versions.fastqc}} 
+      - samtools/{{versions.samtools}} 

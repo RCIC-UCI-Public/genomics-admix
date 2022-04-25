@@ -1,0 +1,13 @@
+!include cmseq.yaml
+!include rcic-module.yaml
+---
+- package: cmseq module
+  category: GENOMICS
+  module:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin
+      - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}" 
+      - samtools/{{versions.samtools}} 

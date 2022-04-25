@@ -1,0 +1,19 @@
+!include common.yaml
+---
+- package: biom-format 
+  name: biom-format
+  version: "{{versions.biomformat}}"
+  vendor_source: https://files.pythonhosted.org/packages/{{versions.biomformat_hash}}/{{name}}-{{version}}.{{extension}}
+  description: |
+    Biological Observation Matrix (BIOM) format {{version}}
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --root $(ROOT) --prefix {{root}}
+  requires:
+    - "python_{{pyversion}}"

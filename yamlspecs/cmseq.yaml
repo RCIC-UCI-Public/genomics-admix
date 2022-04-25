@@ -1,0 +1,22 @@
+!include common.yaml
+---
+- package: cmseq 
+  name: cmseq
+  version: "{{versions.cmseq}}"
+  vendor_source: https://github.com/SegataLab/cmseq/archive/refs/tags/{{version}}.{{extension}}
+  description: |
+    CMSeq {{version}} is a set of commands to provide an interface
+    to bam files for coverage and sequence consensus.
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --root $(ROOT) --prefix {{root}}
+  requires:
+    - "python_{{pyversion}}"
+    - "python_{{pyversion}}-seaborn"
+    - "python_{{pyversion}}-bcbio-gff"

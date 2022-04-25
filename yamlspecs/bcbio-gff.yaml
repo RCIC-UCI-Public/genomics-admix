@@ -1,0 +1,22 @@
+!include common.yaml
+---
+- package: bcbio-gff 
+  name: bcbio-gff
+  baserpm: python_{{pyversion}}-{{name}}
+  version: "{{versions.bcbiogff}}"
+  vendor_source: https://files.pythonhosted.org/packages/{{versions.bcbiogff_hash}}/{{name}}-{{version}}.{{extension}}
+  description: |
+    Bcbio-gff {{version}} is read rnd write Generic Feature Format (GFF) with Biopython integration. 
+  build:
+    pkgmake: >
+      python setup.py build
+    modules: 
+      - python/{{pyversion}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT){{root}};
+      python setup.py install --root $(ROOT)
+  requires:
+    - "python_{{pyversion}}"
+  files:
+    - "{{pkg_defaults.app_path}}/python/{{pyversion}}"
