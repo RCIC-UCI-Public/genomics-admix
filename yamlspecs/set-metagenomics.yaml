@@ -19,6 +19,8 @@ bootstrap:
   - phylophlan-module
   - trimmomatic
   - trimmomatic-module
+  - diamond
+  - diamond-module
 build:
   - metaphlan
   - metaphlan-module

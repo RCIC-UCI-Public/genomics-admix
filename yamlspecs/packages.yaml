@@ -72,14 +72,10 @@ build:
   - stringtie-module
   - igv
   - igv-module
-  - diamond
-  - diamond-module
   - bedops
   - bedops-module
   - bionetgen
   - bionetgen-module
-  - fastqtl
-  - fastqtl-module
   - bbmap
   - bbmap-module
   - megahit
@@ -105,3 +101,7 @@ sets:
 # pratt
 # hisat-genotype
 # rMATS-bin
+# fastqtl
+# fastqtl-module
+# diamond - move to metagenomics set
+# diamond-module - move to metagenomics set

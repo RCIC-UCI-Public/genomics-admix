@@ -52,7 +52,6 @@ plinkseq:
   git: d8b0d06c105d7ee803b1859ae9c159725f83a9e3
   build: "src"
   addmod: protobuf/2.4.1
-fastqtl: "2.184"
 bbmap: "38.87"
 megahit: "1.2.9"
 exonerate: "2.2.0"
@@ -73,3 +72,4 @@ bracken: "2.6.0"
 #  rel: "3"
 #  version: "4.0.2"
 #  python: "2.7.17"
+#fastqtl: "2.184"
