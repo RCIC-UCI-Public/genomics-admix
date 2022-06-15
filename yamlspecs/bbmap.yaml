@@ -27,7 +27,7 @@
        chmod 644 current/*/*.class current/*/*.java;
        chmod 644 docs/*.txt docs/guides/*.txt;
        chmod 644 pipelines/*/*.txt;
-       chmod 644 pytools/ReasMe pytools/css/* pytools/filter*/* pytools/images/* pytools/template/*;
+       chmod 644 pytools/ReadMe pytools/css/* pytools/filter*/* pytools/images/* pytools/template/*;
        chmod 644 resources/*;
        cp -p -r config current docs pipelines pytools resources *.sh $(ROOT){{root}};
        $(INSTALL) -m 644 bitbucket-pipelines.yml build.xml license.txt README.md $(ROOT){{root}}
