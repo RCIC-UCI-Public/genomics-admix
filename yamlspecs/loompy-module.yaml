@@ -9,3 +9,6 @@
     prepend_path:
       - PATH {{root}}/bin
       - PYTHONPATH {{pypath}}
+    prereq:
+      - "{{build.modules}}"
+      - intel-tbb/{{versions.intel_tbb}}
