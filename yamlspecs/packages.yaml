@@ -26,11 +26,6 @@ system:
   - libstdc++-static
   - zlib-static
 bootstrap:
-  - click
-  - llvmlite
-  - numpy-groupies
-  - numba
-  - numba-module
   - loompy
   - loompy-module
   - imagemagick
@@ -105,3 +100,9 @@ sets:
 # fastqtl-module
 # diamond - move to metagenomics set
 # diamond-module - move to metagenomics set
+# moved to python-admix
+#   click
+#   llvmlite
+#   numpy-groupies
+#   numba
+#   numba-module - no need
