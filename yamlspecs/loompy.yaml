@@ -17,7 +17,6 @@
     modules: 
       - "{{compiler}}/{{compiler_version}}"
       - python/{{pyversion}}
-      - llvm/{{versions.llvm}}
   install:
     makeinstall: >
       python setup.py install --root $(ROOT) --prefix {{root}}
@@ -27,5 +26,4 @@
     - "python_{{pyversion}}-click"
     - "python_{{pyversion}}-llvmlite"
     - "python_{{pyversion}}-numpy-groupies"
-    - numba_{{versions.numba}}
-    - llvm_{{versions.llvm}}
+    - "python_{{pyversion}}-numba"
