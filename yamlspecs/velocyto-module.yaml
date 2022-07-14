@@ -11,6 +11,4 @@
       - PYTHONPATH {{pypath}}
     prereq: 
       - "{{build.modules}}"
-      - llvm/{{versions.llvm}}
-      - numba/{{versions.numba}}
       - loompy/{{versions.loompy}}

@@ -29,5 +29,4 @@
     - "python_{{pyversion}}-pysam"
     - "python_{{pyversion}}-scikit-learn"
     - "python_{{pyversion}}-click"
-    - numba_{{versions.numba}}
     - loompy_{{versions.loompy}}
