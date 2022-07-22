@@ -16,7 +16,7 @@
     base_modules:
       - "{{compiler}}/{{compiler_version}}"
     modules:
-      - foundation
+      - foundation/{{versions.foundation}}
       - python/{{versions.python3}}
       - "{{build.base_modules}}"
     pkgmake: >

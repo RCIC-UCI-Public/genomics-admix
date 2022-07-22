@@ -22,7 +22,7 @@
       - gsl/{{versions.gsl}}/{{compiler}}.{{compiler_version}}
     modules: 
       - "{{compiler}}/{{compiler_version}}"
-      - foundation
+      - foundation//{{versions.foundation}}
       - "{{build.base_modules}}"
   extras: LICENSE README*
   install:
