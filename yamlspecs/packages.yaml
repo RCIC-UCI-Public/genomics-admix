@@ -49,8 +49,8 @@ build:
   - rMATS-module
   - canu
   - canu-module
-  - mummer
-  - mummer-module
+# - mummer
+# - mummer-module
   - velocyto
   - velocyto-module
   - prodigal
