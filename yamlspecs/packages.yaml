@@ -65,8 +65,8 @@ build:
   - bismark-module
   - stringtie
   - stringtie-module
-  - igv
-  - igv-module
+# - igv
+# - igv-module
   - bedops
   - bedops-module
   - bionetgen
