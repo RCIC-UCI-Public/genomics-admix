@@ -75,10 +75,10 @@ build:
   - bbmap-module
   - megahit
   - megahit-module
-  - kraken2
-  - kraken2-module
-  - bracken
-  - bracken-module
+# - kraken2
+# - kraken2-module
+# - bracken
+# - bracken-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
