@@ -45,8 +45,8 @@ build:
   - plink-module
   - !ifeq "{{site.os_release}},7,plinkseq,"
   - !ifeq "{{site.os_release}},7,plinkseq-module,"
-  - rMATS
-  - rMATS-module
+# - rMATS
+# - rMATS-module
   - canu
   - canu-module
 # - mummer
