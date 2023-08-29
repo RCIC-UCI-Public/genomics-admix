@@ -45,28 +45,20 @@ build:
   - plink-module
   - !ifeq "{{site.os_release}},7,plinkseq,"
   - !ifeq "{{site.os_release}},7,plinkseq-module,"
-# - rMATS
-# - rMATS-module
   - canu
   - canu-module
-# - mummer
-# - mummer-module
   - velocyto
   - velocyto-module
   - prodigal
   - prodigal-module
   - roary
   - roary-module
-# - midas
-# - midas-module
   - hisat2
   - hisat2-module
   - bismark
   - bismark-module
   - stringtie
   - stringtie-module
-# - igv
-# - igv-module
   - bedops
   - bedops-module
   - bionetgen
@@ -75,15 +67,10 @@ build:
   - bbmap-module
   - megahit
   - megahit-module
-# - kraken2
-# - kraken2-module
-# - bracken
-# - bracken-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
 sets:
-  - latest
   - centos8
   - metagenomics
 ###### Unused packages, keep for a reference
@@ -106,3 +93,15 @@ sets:
 #   numpy-groupies
 #   numba
 #   numba-module - no need
+# - rMATS
+# - rMATS-module
+# - mummer
+# - mummer-module
+# - midas
+# - midas-module
+# - igv
+# - igv-module
+# - kraken2
+# - kraken2-module
+# - bracken
+# - bracken-module
