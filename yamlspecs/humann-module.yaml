@@ -3,6 +3,7 @@
 ---
 - package: humann module
   category: GENOMICS
+  release: 2
   module:
     setenv:
     prepend_path:
@@ -10,6 +11,6 @@
       - PYTHONPATH {{pypath}}
     prereq:
       - "{{build.modules}}" 
-      - glpk/{{versions.glpk}} 
+      - glpk/{{versions.glpk}}/{{compiler}}.{{compiler_version}}
       - diamond/{{versions.diamond}} 
       - bowtie2/{{versions.bowtie2}} 

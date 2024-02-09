@@ -9,7 +9,6 @@ biomformat_hash: "fc/3f/7eb762b52f490b810b1686fd41cd6f3f7f33c0dab29c4273c96e9a16
 cmseq: "1.0.4"
 dendropy: "4.5.2"
 dendropy_hash: "f9/10/125c181b1d97ffc4661a60ec897cfe058dc46cb53900d807819464c3510f"
-glpk: "5.0"
 hclust2: "1.0.0"
 humann: "3.0.1"
 kneaddata: "0.10.0"

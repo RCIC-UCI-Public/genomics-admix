@@ -7,8 +7,6 @@ bootstrap:
   - seaborn
   - cmseq
   - cmseq-module
-  - glpk
-  - glpk-module
   - biom-format
   - biom-format-module
   - dendropy
