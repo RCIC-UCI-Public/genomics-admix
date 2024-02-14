@@ -16,6 +16,7 @@ metaphlan: "3.0.14"
 phylophlan: "3.0.2"
 seaborn: "0.11.2"
 trimmomatic: "0.39"
+glpk: "5.0"
 # prereqs from biotools
 trf: "4.0.9"
 fastqc: "0.11.9"
