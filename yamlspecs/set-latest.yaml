@@ -3,8 +3,6 @@
 versions: versions-latest.yaml
 bootstrap:
 build:
-#nouse  - plinkseq
-#nouse  - plinkseq-module
   - rMATS
   - rMATS-module
 manifest:

@@ -3,26 +3,8 @@
 versions: versions-metagenomics.yaml
 system:
 bootstrap:
-  - bcbio-gff
-  - seaborn
-  - cmseq
-  - cmseq-module
-  - biom-format
-  - biom-format-module
-  - dendropy
-  - dendropy-module
-  - hclust2
-  - hclust2-module
-  - phylophlan
-  - phylophlan-module
   - trimmomatic
   - trimmomatic-module
-  - diamond
-  - diamond-module
 build:
-  - metaphlan
-  - metaphlan-module
-  - humann
-  - humann-module
   - kneaddata
   - kneaddata-module
