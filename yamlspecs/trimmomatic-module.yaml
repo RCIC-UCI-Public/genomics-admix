@@ -6,6 +6,6 @@
   module:
     setenv:
     prepend_path:
-      - PATH {{root}}/bin
+      - TRIM {{root}}
     prereq:
       - "{{build.modules}}" 

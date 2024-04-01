@@ -1,6 +1,7 @@
 !include common.yaml
 ---
 - package: Trimmomatic
+  release: 2
   extension: zip
   name: trimmomatic 
   version: "{{versions.trimmomatic}}"
@@ -13,6 +14,7 @@
     Pilon requires as input a FASTA file of the genome along with one or more BAM files 
     of reads aligned to the input FASTA file. Pilon uses read alignment analysis to 
     identify inconsistencies between the input genome and the evidence in the reads. 
+    To execute run command java -jar \$TRIM/{{name}}-{{version}}.jar <your arguments>
   build:
     modules: 
       - java/{{versions.java}}
