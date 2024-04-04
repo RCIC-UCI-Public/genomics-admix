@@ -47,8 +47,6 @@ build:
   - velocyto-module
   - prodigal
   - prodigal-module
-  - roary
-  - roary-module
   - hisat2
   - hisat2-module
   - stringtie
