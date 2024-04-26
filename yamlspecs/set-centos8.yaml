@@ -15,3 +15,5 @@ build:
   - kraken2-module
   - bracken
   - bracken-module
+  - rMATS
+  - rMATS-module
