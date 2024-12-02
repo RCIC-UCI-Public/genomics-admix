@@ -19,7 +19,7 @@
       - gsl/{{versions.gsl}}/{{compiler}}.{{compiler_version}}
     modules:
       - "{{build.base_modules}}"
-      - foundation/{{versions.foundation}}
+      - cmake/{{versions.cmake}}
     pkgmake: >
       unset MAKEFLAGS;
       sed -i "s/main /\#main /" setup_environment.sh;
