@@ -8,3 +8,5 @@ bootstrap:
 build:
   - kneaddata
   - kneaddata-module
+  - diamond
+  - diamond-module

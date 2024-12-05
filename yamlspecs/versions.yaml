@@ -31,3 +31,8 @@ protobuf: "2.4.1"
 bbmap: "38.87"
 megahit: "1.2.9"
 exonerate: "2.2.0"
+canu: "2.0"
+rMATS:
+  rel: 1
+  version: "4.1.1"
+  python: "3.8.0"

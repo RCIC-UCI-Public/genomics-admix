@@ -22,3 +22,4 @@ igv:
 bbmap: "38.96"
 kraken2: "2.1.2"
 bracken: "2.6.2"
+diamond: "2.0.15"

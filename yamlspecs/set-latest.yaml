@@ -1,9 +1,0 @@
-!include packages.yaml
----
-versions: versions-latest.yaml
-bootstrap:
-build:
-  - rMATS
-  - rMATS-module
-manifest:
-  - "{{build}}"

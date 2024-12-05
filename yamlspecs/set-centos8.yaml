@@ -17,3 +17,5 @@ build:
   - bracken-module
   - rMATS
   - rMATS-module
+  - diamond
+  - diamond-module

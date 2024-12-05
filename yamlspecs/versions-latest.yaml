@@ -1,7 +1,0 @@
-!include versions.yaml
----
-# later version is build from src  distro
-rMATS:
-  rel: 1
-  version: "4.1.1"
-  python: "3.8.0"

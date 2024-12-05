@@ -41,6 +41,8 @@ bootstrap:
   - fasttree
   - fasttree-module
 build:
+  - bismark
+  - bismark-module
   - plink
   - plink-module
   - velocyto
@@ -57,6 +59,10 @@ build:
   - bbmap-module
   - megahit
   - megahit-module
+  - canu
+  - canu-module
+  - rMATS
+  - rMATS-module
 manifest:
   - "{{bootstrap}}"
   - "{{build}}"
