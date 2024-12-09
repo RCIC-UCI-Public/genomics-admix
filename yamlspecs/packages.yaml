@@ -30,16 +30,16 @@ bootstrap:
   - loompy-module
   - imagemagick
   - imagemagick-module
-  - cdhit
-  - cdhit-module
-  - mcl
-  - mcl-module
-  - prank
-  - prank-module
+# - cdhit
+# - cdhit-module
+# - mcl
+# - mcl-module
+# - prank
+# - prank-module
   - mafft
   - mafft-module
-  - fasttree
-  - fasttree-module
+# - fasttree
+# - fasttree-module
 build:
   - bismark
   - bismark-module
