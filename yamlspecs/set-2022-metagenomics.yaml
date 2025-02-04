@@ -1,6 +1,6 @@
 !include packages.yaml
 ---
-versions: versions-metagenomics.yaml
+versions: versions-2022-metagenomics.yaml
 system:
 bootstrap:
   - trimmomatic

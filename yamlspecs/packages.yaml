@@ -59,5 +59,5 @@ manifest:
   - "{{bootstrap}}"
   - "{{build}}"
 sets:
-  - centos8
-  - metagenomics
+  - "2022"
+  - "2022-metagenomics"
