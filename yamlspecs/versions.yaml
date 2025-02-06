@@ -1,5 +1,6 @@
 !include site.yaml
 ---
+admix: genomics-admix
 llvm: "9.0.1"
 ncbi_blast: "2.10.0"
 ncbi_ngs: "2.10.2"
