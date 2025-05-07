@@ -9,7 +9,10 @@
    sequencing (such as the PacBio RS II/Sequel or Oxford Nanopore MinION)
   canuarch: "Linux-amd64"
   build:
-    pkgmake: cd src; make -j 8
+    pkgmake:
+      cd src;
+      if [ ! -f /usr/include/sys/sysctl.h ]; then sed -i 's%\#include <sys/sysctl.h>%\#include <linux/sysctl.h>%' utility/system.C; fi;
+      make -j 8
   install:
      makeinstall: >
        mkdir -p $(ROOT){{root}};
