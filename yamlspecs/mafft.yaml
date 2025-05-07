@@ -12,6 +12,11 @@
     See https://mafft.cbrc.jp/alignment/software
   src_dir: "{{name}}-{{version}}-with-extensions"
   build:
+    base_modules:
+      - "{{compiler}}/{{compiler_version}}"
+    modules:
+      - !ifeq "{{versions.os_release}},9,go/{{versions.go}},"
+      - "{{build.base_modules}}"
     pkgmake: >
        (cd core; sed -i -e 's/\#DASH/DASH/g' Makefile; make PREFIX={{root}});
        (cd extensions; make PREFIX={{root}})
