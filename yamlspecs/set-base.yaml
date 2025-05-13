@@ -1,0 +1,33 @@
+!include packages.yaml
+---
+versions: versions.yaml
+bootstrap:
+  - loompy
+  - loompy-module
+  - imagemagick
+  - imagemagick-module
+  - mafft
+  - mafft-module
+build:
+  - bismark
+  - bismark-module
+  - plink
+  - plink-module
+  - velocyto
+  - velocyto-module
+  - prodigal
+  - prodigal-module
+  - hisat2
+  - hisat2-module
+  - stringtie
+  - stringtie-module
+  - bedops
+  - bedops-module
+  - bbmap
+  - bbmap-module
+  - megahit
+  - megahit-module
+  - canu
+  - canu-module
+  - rMATS
+  - rMATS-module
