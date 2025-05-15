@@ -27,7 +27,8 @@ build:
   - bbmap-module
   - megahit
   - megahit-module
-  - canu
-  - canu-module
+# unused
+# - canu
+# - canu-module
   - rMATS
   - rMATS-module
