@@ -1,17 +1,18 @@
 !include common.yaml
 ---
-- package: DendroPy 
+- package: DendroPy
   name: dendropy
   version: "{{versions.dendropy}}"
   vendor_source: https://files.pythonhosted.org/packages/{{versions.dendropy_hash}}/{{package}}-{{version}}.{{extension}}
   src_dir: "{{package}}-{{version}}"
   description: |
-    Dendropy {{version}} is a library for phylogenetics and phylogenetic computing: reading, writing,
-    simulation, processing and manipulation of phylogenetic trees (phylogenies) and characters
+    Dendropy is a library for phylogenetics and phylogenetic computing.
+    It provides for reading, writing, simulation, processing and
+    manipulation of phylogenetic trees (phylogenies) and characters.
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - python/{{pyversion}}
   install:
     makeinstall: >

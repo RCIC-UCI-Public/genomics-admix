@@ -1,17 +1,17 @@
 !include common.yaml
 ---
-- package: StringTie 
-  name: stringtie 
+- package: StringTie
+  name: stringtie
   version: "{{versions.stringtie}}"
   vendor_source: http://ccb.jhu.edu/software/stringtie/dl/{{name}}-{{version}}.{{extension}}
   description: |
-    StringTie {{version}} is a fast and highly efficient assembler of RNA-Seq alignments
+    StringTie is a fast and highly efficient assembler of RNA-Seq alignments
     into potential transcripts. It uses a novel network flow algorithm as well as an
     optional de novo assembly step to assemble and quantitate full-length transcripts
-    representing multiple splice variants for each gene locus. 
+    representing multiple splice variants for each gene locus.
     See https://ccb.jhu.edu/software/stringtie
   build:
-    modules: 
+    modules:
       - "{{compiler}}/{{compiler_version}}"
     pkgmake: >
       sed -i -e "s/env python2/env python/" prepDE.py;

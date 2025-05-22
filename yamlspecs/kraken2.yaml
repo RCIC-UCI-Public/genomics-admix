@@ -5,12 +5,9 @@
   version: "{{versions.kraken2}}"
   vendor_source: https://github.com/DerrickWood/kraken2/archive/v{{version}}.{{extension}}
   description: |
-   Kraken2 {{version}} is the second version of the Kraken taxonomic
-   sequence classification system that assigns taxonomic labels
-   to DNA sequences. Kraken examines the k-mers within a query
-   sequence and uses the information within those k-mers to
-   query a database. Please see the Operating Manual for usage
-   details https://github.com/DerrickWood/kraken2/wiki/Manual
+   Kraken2 is a taxonomic sequence classifier. It is the second
+   version of the Kraken taxonomic sequence classification system
+   that assigns taxonomic labels to DNA sequences.
   build:
     modules:
       - "{{compiler}}/{{compiler_version}}"

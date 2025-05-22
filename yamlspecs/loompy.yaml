@@ -1,20 +1,16 @@
 !include common.yaml
 ---
-- package: loompy 
-  name: loompy 
+- package: loompy
+  name: loompy
   version: "{{versions.loompy}}"
   vendor_source: https://github.com/linnarsson-lab/{{name}}/archive/{{version}}.{{extension}}
   description: |
-    Loompy {{version}} provides support for loom files. Loom is an efficient
-    file format for large omics datasets. Loom files contain a main matrix,
-    optional additional layers, a variable number of row and column annotations,
-    and sparse graph objects. Under the hood, Loom files are HDF5 and can be
-    opened from many programming languages, including Python, R, C, C++, Java,
-    MATLAB, Mathematica, and Julia
+    Loompy provides support for loom files. Loom is
+    an efficient file format for large omics datasets.
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - "{{compiler}}/{{compiler_version}}"
       - python/{{pyversion}}
   install:

@@ -5,7 +5,7 @@
   category: GENOMICS
   release: 2
   module:
-    setenv: 
+    setenv:
       - MAFFT_BINARIES {{root}}/libexec/{{name}}
     prepend_path:
       - PATH {{root}}/bin

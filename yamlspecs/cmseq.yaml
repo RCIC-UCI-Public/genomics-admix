@@ -1,16 +1,16 @@
 !include common.yaml
 ---
-- package: cmseq 
+- package: cmseq
   name: cmseq
   version: "{{versions.cmseq}}"
   vendor_source: https://github.com/SegataLab/cmseq/archive/refs/tags/{{version}}.{{extension}}
   description: |
-    CMSeq {{version}} is a set of commands to provide an interface
-    to bam files for coverage and sequence consensus.
+    CMSeq interface utilities. A set of commands to provide an
+    interface to bam files for coverage and sequence consensus.
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - python/{{pyversion}}
   install:
     makeinstall: >

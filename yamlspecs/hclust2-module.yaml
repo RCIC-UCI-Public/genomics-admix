@@ -9,4 +9,4 @@
       - PATH {{root}}/bin
       - PYTHONPATH {{pypath}}
     prereq:
-      - "{{build.modules}}" 
+      - "{{build.modules}}"

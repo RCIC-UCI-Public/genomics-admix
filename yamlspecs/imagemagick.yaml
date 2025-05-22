@@ -6,12 +6,13 @@
   versionRev: "{{versions.imagemagick.versionRev}}"
   vendor_source: https://github.com/ImageMagick/ImageMagick/archive/{{versionRev}}.{{extension}}
   description: |
-    Use ImageMagic {{versionRev}} to create, edit, compose, or convert bitmap images.
-    It can read and write images in a variety of formats (over 200) including 
-    PNG, JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. 
+    ImageMagick is a software suite for manipulating digital images.
+    Use ImageMagick to create, edit, compose, or convert bitmap images.
+    It can read and write images in a variety of formats (over 200) including
+    PNG, JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG.
     Website https://imagemagick.org
   src_dir: "{{package}}-{{versionRev}}"
-  addfile: 
+  addfile:
     - filter-requires-{{name}}.sh
     - filter-provides-{{name}}.sh
   build:

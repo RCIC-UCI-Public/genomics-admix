@@ -1,16 +1,16 @@
 !include common.yaml
 ---
-- package: Prodigal 
-  name: prodigal 
+- package: Prodigal
+  name: prodigal
   version: "{{versions.prodigal}}"
   vendor_source: https://github.com/hyattpd/Prodigal/archive/v{{version}}.{{extension}}
   description: |
-    Prodigal {{version}} is a protein-coding gene prediction software tool for
+    Prodigal is a protein-coding gene prediction software tool for
     bacterial and archaeal genomes. The acronym stands for PROkaryotic DYnamic
     Programming Genefinding ALgorithm. See https://github.com/hyattpd/Prodigal
   src_dir: "{{package}}-{{version}}"
   build:
-    modules: 
+    modules:
       - "{{compiler}}/{{compiler_version}}"
   extras: LICENSE README.md
   install:

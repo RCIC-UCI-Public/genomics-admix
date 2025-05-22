@@ -9,10 +9,10 @@
       - PATH {{root}}/bin
       - PYTHONPATH {{pypath}}
     prereq:
-      - "{{build.modules}}" 
-      - bowtie2/{{versions.bowtie2}} 
-      - phylophlan/{{versions.phylophlan}} 
-      - biom-format/{{versions.biomformat}} 
-      - dendropy/{{versions.dendropy}} 
-      - cmseq/{{versions.cmseq}} 
-      - hclust2/{{versions.hclust2}} 
+      - "{{build.modules}}"
+      - bowtie2/{{versions.bowtie2}}
+      - phylophlan/{{versions.phylophlan}}
+      - biom-format/{{versions.biomformat}}
+      - dendropy/{{versions.dendropy}}
+      - cmseq/{{versions.cmseq}}
+      - hclust2/{{versions.hclust2}}

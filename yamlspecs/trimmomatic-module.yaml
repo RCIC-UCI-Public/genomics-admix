@@ -8,4 +8,4 @@
     prepend_path:
       - TRIM {{root}}
     prereq:
-      - "{{build.modules}}" 
+      - "{{build.modules}}"

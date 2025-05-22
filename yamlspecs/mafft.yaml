@@ -6,7 +6,7 @@
   extension: tgz
   vendor_source: https://mafft.cbrc.jp/alignment/software/{{name}}-{{version}}-with-extensions-src.{{extension}}
   description: |
-    MAFFT {{version}} is a multiple sequence alignment program for unix-like operating
+    MAFFT is a multiple sequence alignment program for unix-like operating
     systems. It offers a range of multiple alignment methods, L-INS-i (accurate; for
     alignment of less than 200 sequences), FFT-NS-2 (fast; for alignment of less than 30,000 sequences), etc.
     See https://mafft.cbrc.jp/alignment/software

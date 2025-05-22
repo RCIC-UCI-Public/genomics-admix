@@ -1,19 +1,16 @@
 !include common.yaml
 ---
-- package: MetaPhlAn 
+- package: MetaPhlAn
   name: metaphlan
   version: "{{versions.metaphlan}}"
   vendor_source: https://github.com/biobakery/MetaPhlAn/archive/refs/tags/{{version}}.{{extension}}
   description: |
-    MetaPhlAn {{version}} is a computational tool for profiling the composition of microbial communities
-    (Bacteria, Archaea and Eukaryotes) from metagenomic shotgun sequencing data (i.e. not 16S)
-    with species-level. With the newly added StrainPhlAn module, it is now possible to perform
-    accurate strain-level microbial profiling. 
+    MetaPhlAn is a tool for accurate strain-level microbial profiling.
   src_dir: "{{package}}-{{version}}"
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - python/{{pyversion}}
   install:
     makeinstall: >

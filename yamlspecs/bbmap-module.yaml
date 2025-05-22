@@ -4,7 +4,7 @@
 - package: bbmap Module
   category: GENOMICS
   module:
-    setenv: 
+    setenv:
       - BBMAP_HOME {{root}}
     prepend_path:
       - PATH {{root}}

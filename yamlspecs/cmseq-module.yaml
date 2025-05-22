@@ -9,5 +9,5 @@
       - PATH {{root}}/bin
       - PYTHONPATH {{pypath}}
     prereq:
-      - "{{build.modules}}" 
-      - samtools/{{versions.samtools}} 
+      - "{{build.modules}}"
+      - samtools/{{versions.samtools}}

@@ -5,10 +5,10 @@
   version: "{{versions.bedops}}"
   vendor_source: https://github.com/bedops/bedops/archive/v{{version}}.{{extension}}
   description: |
-    BEDOPS {{version}} is an open-source command-line toolkit that performs highly
-    efficient and scalable Boolean and other set operations, statistical calculations,
-    archiving, conversion and other management of genomic data of arbitrary scale.
-    See https://bedops.readthedocs.io/en/latest/content/overview.html
+    BEDOPS - a toolkit for high-performance genomic feature operations.
+    It is a suite of tools that provides statistical calculations,
+    archiving, conversion and other management of genomic data of
+    arbitrary scale.
   build:
     pkgmake: unset MAKEFLAGS; make all
   extras: LICENSE README.md

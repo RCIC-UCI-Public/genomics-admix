@@ -1,17 +1,17 @@
 !include common.yaml
 ---
-- package: seaborn 
+- package: seaborn
   name: seaborn
   baserpm: python_{{pyversion}}-{{name}}
   version: "{{versions.seaborn}}"
   vendor_source: https://github.com/mwaskom/seaborn/archive/refs/tags/v{{version}}.{{extension}}
   description: |
-    Seaborn {{version}} is a library for making statistical graphics in Python. It is
-    built on top of matplotlib and closely integrated with pandas data structures
+    Seaborn is a library for making statistical graphics in Python. It is
+    built on top of matplotlib and closely integrated with pandas data structures.
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - python/{{pyversion}}
   install:
     makeinstall: >

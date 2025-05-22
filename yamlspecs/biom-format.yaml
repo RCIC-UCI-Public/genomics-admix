@@ -1,15 +1,15 @@
 !include common.yaml
 ---
-- package: biom-format 
+- package: biom-format
   name: biom-format
   version: "{{versions.biomformat}}"
   vendor_source: https://files.pythonhosted.org/packages/{{versions.biomformat_hash}}/{{name}}-{{version}}.{{extension}}
   description: |
-    Biological Observation Matrix (BIOM) format {{version}}
+    Biological Observation Matrix (BIOM) format.
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - python/{{pyversion}}
   install:
     makeinstall: >

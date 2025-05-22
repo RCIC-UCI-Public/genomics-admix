@@ -1,17 +1,15 @@
 !include common.yaml
 ---
 - package: rMATS turbo
-  name: rMATS 
+  name: rMATS
   release: "{{versions.rMATS.rel}}"
   version: "{{versions.rMATS.version}}"
   python_version: "{{versions.python3}}"
   vendor_source: https://github.com/Xinglab/rmats-turbo/archive/v{{version}}.{{extension}}
   src_dir: "rmats-turbo-{{version}}"
   description: |
-    rMATS turbo {{version}} is the C/Cython version of rMATS (http://rnaseq-mats.sourceforge.net).
-    The major difference between rMATS turbo and rMATS is speed and space usage. rMATS turbo is
-    100 times faster and the output file is 1000 times smaller than rMATS. These advantages make
-    analysis and storage of a large scale dataset easy and convenient
+    rMATS turbo is the C/Cython version of rMATS.
+    The major difference between rMATS turbo and rMATS is speed and space usage.
   build:
     base_modules:
       - "{{compiler}}/{{compiler_version}}"

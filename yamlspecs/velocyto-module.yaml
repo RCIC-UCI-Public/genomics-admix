@@ -9,6 +9,6 @@
     prepend_path:
       - PATH {{root}}/bin
       - PYTHONPATH {{pypath}}
-    prereq: 
+    prereq:
       - "{{build.modules}}"
       - loompy/{{versions.loompy}}

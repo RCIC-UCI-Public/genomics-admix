@@ -1,26 +1,26 @@
 !include common.yaml
 ---
 - package: diamond
-  name: diamond 
+  name: diamond
   version: "{{versions.diamond}}"
   vendor_source: https://github.com/bbuchfink/{{name}}/archive/v{{version}}.{{extension}}
   description: |
-    Diamond {{version}} is a sequence aligner for protein and translated DNA searches, 
-    designed for high performance analysis of big sequence data. The key features are: 
+    Diamond is a sequence aligner for protein and translated DNA searches.
+    It is designed for high performance analysis of big sequence data. The key features are
     o Pairwise alignment of proteins and translated DNA at 100x-20,000x speed of BLAST.
     o Frameshift alignments for long read analysis.
     o Low resource requirements and suitable for running on standard desktops or laptops.
-    o Various output formats, including BLAST pairwise, tabular and XML, as well as taxonomic classification. 
+    o Various output formats, including BLAST pairwise, tabular and XML, as well as taxonomic classification.
   builddir: build
   build:
     preconfigure: mkdir {{builddir}}
-    configure: cd {{builddir}}; cmake 
+    configure: cd {{builddir}}; cmake
     configure_args: -DCMAKE_INSTALL_PREFIX={{root}} -DCMAKE_BUILD_MARCH=haswell ..
-    pkgmake: > 
-      cd {{builddir}}; make -j 8 
-    base_modules: 
+    pkgmake: >
+      cd {{builddir}}; make -j 8
+    base_modules:
       - "{{compiler}}/{{compiler_version}}"
-    modules: 
+    modules:
       - cmake/{{versions.cmake}}
       - "{{build.base_modules}}"
   install:

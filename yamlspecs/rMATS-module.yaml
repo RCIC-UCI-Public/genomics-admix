@@ -7,9 +7,9 @@
     setenv:
     prepend_path:
       - PATH {{root}}
-    alias: 
+    alias:
       - rMATS "python {{root}}/rmats.py"
-    prereq: 
+    prereq:
       - "{{build.base_modules}}"
       - star/{{versions.star}}
       - samtools/{{versions.samtools}}

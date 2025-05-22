@@ -6,5 +6,5 @@
   category: GENOMICS
   module:
     setenv:
-    prepend_path: 
+    prepend_path:
       - PATH {{root}}/bin

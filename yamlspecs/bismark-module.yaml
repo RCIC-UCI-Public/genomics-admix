@@ -5,9 +5,9 @@
   category: GENOMICS
   release: 2
   module:
-    prepend_path: 
+    prepend_path:
       - PATH {{root}}
-    prereq: 
+    prereq:
       - perl/{{versions.perl}}
       - samtools/{{versions.samtools}}
       - bowtie2/{{versions.bowtie2}}

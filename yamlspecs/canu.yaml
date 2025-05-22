@@ -1,12 +1,12 @@
 !include common.yaml
 ---
-- package: canu 
-  name: canu 
+- package: canu
+  name: canu
   version: "{{versions.canu}}"
   vendor_source: https://github.com/marbl/canu/archive/v{{version}}.{{extension}}
   description: |
-   Canu is a fork of the Celera Assembler, designed for high-noise single-molecule 
-   sequencing (such as the PacBio RS II/Sequel or Oxford Nanopore MinION)
+   Canu is a fork of the Celera Assembler.
+   It is designed for high-noise single-molecule sequencing.
   canuarch: "Linux-amd64"
   build:
     pkgmake:

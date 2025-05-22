@@ -1,17 +1,17 @@
 !include common.yaml
 ---
-- package: velocyto 
-  name: velocyto 
+- package: velocyto
+  name: velocyto
   version: "{{versions.velocyto}}"
   vendor_source: https://github.com/velocyto-team/velocyto.py/archive/{{version}}.{{extension}}
   description: |
-    Velocyto {{version}} is a library for the analysis of RNA velocity.
+    Velocyto is a library for the analysis of RNA velocity.
     Velocyto includes a command line tool and an analysis pipeline
   src_dir: "{{name}}.py-{{version}}"
   build:
     pkgmake: >
       python setup.py build
-    modules: 
+    modules:
       - "{{compiler}}/{{compiler_version}}"
       - python/{{pyversion}}
   install:

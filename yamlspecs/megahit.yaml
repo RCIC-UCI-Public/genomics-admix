@@ -1,23 +1,23 @@
 !include common.yaml
 ---
 - package: megahit
-  name: megahit 
+  name: megahit
   version: "{{versions.megahit}}"
   vendor_source: https://github.com/voutcn/megahit/archive/v{{version}}.{{extension}}
   description: |
-    MEGAHIT {{version}} is an ultra-fast and memory-efficient NGS assembler.
+    MEGAHIT is an ultra-fast and memory-efficient NGS assembler.
     It is optimized for metagenomes, but also works well on generic single
     genome assembly (small or mammalian size) and single-cell assembly
   builddir: build
   build:
     preconfigure: mkdir {{builddir}}
-    configure: cd {{builddir}}; cmake 
+    configure: cd {{builddir}}; cmake
     configure_args: -DCMAKE_INSTALL_PREFIX={{root}} -DCMAKE_BUILD_TYPE=Release ..
-    pkgmake: > 
-      cd {{builddir}}; make -j 8 
-    base_modules: 
+    pkgmake: >
+      cd {{builddir}}; make -j 8
+    base_modules:
       - "{{compiler}}/{{compiler_version}}"
-    modules: 
+    modules:
       - cmake/{{versions.cmake}}
       - "{{build.base_modules}}"
   extras: LICENSE README*
