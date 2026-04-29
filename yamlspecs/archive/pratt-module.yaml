@@ -1,9 +1,0 @@
-!include pratt.yaml
-!include rcic-module.yaml
----
-- package: pratt Module
-  category: GENOMICS
-  module:
-    setenv:
-    prepend_path:
-      - PATH {{root}}/bin

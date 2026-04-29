@@ -1,9 +1,0 @@
-!include mummer.yaml
-!include rcic-module.yaml
----
-- package: mummer module
-  category: GENOMICS
-  release: 2
-  module:
-    prereq:
-      - "{{build.base_modules}}"

@@ -1,9 +1,0 @@
-!include usearch.yaml
-!include rcic-module.yaml
----
-- package: usearch module
-  category: GENOMICS
-  module:
-    setenv:
-    prepend_path: 
-      - PATH {{root}}/bin

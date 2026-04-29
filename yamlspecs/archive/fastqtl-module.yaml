@@ -1,9 +1,0 @@
-!include fastqtl.yaml
-!include rcic-module.yaml
----
-- package: fastqtl module
-  category: GENOMICS
-  module:
-    setenv:
-    prepend_path: 
-      - PATH {{root}}/bin

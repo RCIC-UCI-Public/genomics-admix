@@ -1,7 +1,0 @@
-!include rMATS-module.yaml
----
-- version: "{{versions.rMATS_latest}}"
-  release: 1
-  module:
-    prereq: 
-      - python/{{versions.python3}}
